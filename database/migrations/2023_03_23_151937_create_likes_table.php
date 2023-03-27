@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('Id_Reference_Publication');
+            $table->integer('id_reference_user');
         });
     }
 

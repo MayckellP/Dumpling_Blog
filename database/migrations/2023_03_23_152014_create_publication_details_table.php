@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('publication_details', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('category');
             $table->string('content');
             $table->string('image');
             $table->string('date');
