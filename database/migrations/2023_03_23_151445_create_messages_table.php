@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('username');
+            $table->string('content');
             $table->timestamps();
             $table->integer('Id_Reference_Publication');
                     });
