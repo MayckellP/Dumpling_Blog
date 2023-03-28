@@ -10,11 +10,12 @@ class PublicationDetailsController extends Controller
     public function addComment(Request $request)
     {
         $request->validate([
+            'title' => 'required',
             'comment' => 'required',
         ]);
     
         $publicationDetail = new PublicationDetail();
-        $publicationDetail->title = 'Default Title'; // Add this line
+        $publicationDetail->title = $request->title;
         $publicationDetail->content = $request->comment;
         $publicationDetail->save();
     

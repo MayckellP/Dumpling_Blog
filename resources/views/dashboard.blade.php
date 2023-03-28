@@ -10,6 +10,10 @@
                     <form action="{{ route('add-comment') }}" method="post">
                         @csrf
                         <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <textarea class="form-control" id="title" name="title" rows="1" required></textarea>
+                        </div>
+                        <div class="mb-3">
                             <label for="comment" class="form-label">Comment</label>
                             <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
                         </div>
