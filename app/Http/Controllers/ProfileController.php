@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -31,6 +33,7 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+     
 
         $request->user()->save();
 
@@ -56,5 +59,22 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function addFoto(Request $request, $id){
+
+        $user = User::findorFail($id);
+        
+        if($request->hasFile("foto")){
+            $subNameImage = date('d-m-Y_h:i');
+            $image = $request->file("foto");
+            $nameImage = Str::slug($user->name)."_".$subNameImage.".".$image->guessExtension();
+            $routeImage = public_path("DB_Img/post/");
+            $image->move($routeImage,$nameImage);
+            $user->foto = $nameImage;
+        }
+
+       $user->save();
+       return Redirect::route('profile.edit');
     }
 }

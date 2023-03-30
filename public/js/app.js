@@ -9,3 +9,5 @@ function like() {
         console.log(like.value);
     }
 }
+
+function dislike() {}

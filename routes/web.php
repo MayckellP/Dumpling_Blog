@@ -22,6 +22,10 @@ Route::get('/contactPage', function(){
     return view('contactPage');
 })->name('contactPage');
 
+Route::get('/yourEvents', function(){
+    return view('yourEvents');
+})->name('yourEvents');
+
 
 
 
@@ -33,9 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-<<<<<<< HEAD
-
+/*--------------------------------------------------POST FOTO USER */
+Route::post('/newFoto/{id}', [ProfileController::class, 'addFoto']);
 
 
 /*--------------------------------------------------SELECT EVENTS */
@@ -46,6 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Food_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Pub_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('dashboard');
+    Route::get('/yourEvents', [PublicationController::class, 'showYourEvents'])->name('yourEvents');
 });
 
 /*-------------------------------WITHOUT AUTH */
