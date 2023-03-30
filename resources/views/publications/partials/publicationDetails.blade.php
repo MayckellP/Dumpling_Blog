@@ -43,9 +43,11 @@
                 </div>
             </div>
             @auth
-                <a href="/edit/{{$publicationsDetails->id}}">
-                    <button type="button" class="btn btn-warning m-3">Edit Event</button>
-                </a>
+                @if($publications->Id_Reference_User == Auth::user()->id)
+                    <a href="/edit/{{$publicationsDetails->id}}">
+                        <button type="button" class="btn btn-warning m-3">Edit Event</button>
+                    </a>
+                    @endif
             
                 @if($likes->isEmpty())
                     <form action="/like" method="post">
