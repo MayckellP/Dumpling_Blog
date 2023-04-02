@@ -1,5 +1,6 @@
 <style>
 <<<<<<< HEAD
+<<<<<<< HEAD
   .navbar{
     z-index: 2;
   }
@@ -33,15 +34,23 @@
 
 <<<<<<< HEAD
 =======
+=======
+  .navbar{
+    z-index: 2;
+  }
+>>>>>>> 5f453a4 (Probe)
   .logo{
-    width:15%;
+    width:25%;
+  }
+  .navbar{
+    box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
   }
 </style>
-<nav class="navbar navbar-dark bg-black py-3 shadow">
+<nav class="navbar navbar-dark bg-black py-3 opacity-75">
   <div class="container-fluid">
-    <div class="cont-logo w-25 ps-3">
+    <div class="cont-logo w-25 ps-4">
         <a class="navbar-brand p-0 m-0" href="/">
-          <img class="logo" src="/images/logo.svg" alt="">
+          <img class="logo" src="/images/justDumplingLogo.svg" alt="">
         </a>
     </div>
     <div class="cont-links w-75 d-flex justify-content-end align-items-center">
