@@ -38,6 +38,54 @@
                     </div>
                 </div>
             </div>
+<style>
+
+::-webkit-calendar-picker-indicator { 
+    width: 100px;
+    height: 100px;
+    background: url('/images/cal_bg.svg');
+    background-repeat: no-repeat;
+}
+
+    .datepicker-toggle {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.datepicker-toggle-button {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('/images/cal_bg.svg');
+  background-repeat: no-repeat; */
+  
+}
+    </style>
+
+        <div class="row">
+            <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CALENDAR</h5>
+                        <div class="">
+        <label for="">Simple Date & Time</label>
+                            <div class='' id=''>
+                            <span class="datepicker-toggle">
+  <span class=""></span>
+              <input type='month' class="datepicker-toggle-button" />
+</span>
+              <!-- <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 </x-app-layout>
