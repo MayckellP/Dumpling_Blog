@@ -17,3 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+src/dumpling_blog.sql
+src/db/dumpling_blog.sql
+src/snippets/dashboard.blade.php
+src/snippets/PublicationDetailsController.php
