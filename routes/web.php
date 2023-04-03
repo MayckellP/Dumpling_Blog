@@ -4,12 +4,19 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicationDetailsController;
 
 /*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
 
 Route::get('/', function () {
     return view('homePage');
 });
+<<<<<<< HEAD
+/**created a route for created event */
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+=======
 Route::get('/homePage', function(){
     return view('homePage');
 })->name('homePage');
@@ -17,6 +24,7 @@ Route::get('/homePage', function(){
 Route::get('/aboutPage', function(){
     return view('aboutPage');
 })->name('aboutPage');
+>>>>>>> FuktionenProbe
 
 Route::get('/contactPage', function(){
     return view('contactPage');
@@ -112,7 +120,13 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+<<<<<<< HEAD
 =======
 Route::post('/add-comment', 'App\Http\Controllers\PublicationDetailsController@addComment')->name('add-comment');
 Route::post('/add-title', 'App\Http\Controllers\PublicationDetailsController@addtitle')->name('add-title');
 >>>>>>> fa66b06 (title)
+=======
+
+Route::post('/add-comment', 'App\Http\Controllers\PublicationDetailsController@addComment')->name('add-comment');
+Route::post('/add-title', 'App\Http\Controllers\PublicationDetailsController@addtitle')->name('add-title');
+>>>>>>> 2ed55092b83137ed830b0b8fb0e41dab09763fcc
