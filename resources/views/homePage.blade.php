@@ -41,6 +41,9 @@
 <style>
 
 ::-webkit-calendar-picker-indicator { 
+    display: inline-block;
+  position: relative;
+  top: 25px;
     width: 100px;
     height: 100px;
     background: url('/images/cal_bg.svg');
@@ -50,8 +53,8 @@
     .datepicker-toggle {
   display: inline-block;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
 }
 .datepicker-toggle-button {
   position: absolute;
