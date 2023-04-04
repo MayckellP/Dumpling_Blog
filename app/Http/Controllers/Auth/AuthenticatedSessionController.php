@@ -7,8 +7,10 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+/* this is for the profile credentials */
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+
 
 class AuthenticatedSessionController extends Controller
 {
