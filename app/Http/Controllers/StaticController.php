@@ -20,9 +20,6 @@ class StaticController extends Controller
     public function contact(){
         return view('contact');
     }
-    public function translate(){
-        return view('translate');
-    }
     public function yourEvent(){
         return view('yourEvent');
     }

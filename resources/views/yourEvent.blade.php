@@ -12,5 +12,4 @@
         </div>
        
 @endsection
-@extends('layout')
 @extends('layouts.navigation')
