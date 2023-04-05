@@ -32,6 +32,13 @@ class StaticController extends Controller
     public function contact(){
         return view('contact-us');
     }
+<<<<<<< HEAD
 >>>>>>> f64d6a9 (commit-05-April-23)
+=======
+    public function translate(){
+        return view('translate');
+    }
+    
+>>>>>>> 2339bf0 (commit 11:13 hours)
 
 }

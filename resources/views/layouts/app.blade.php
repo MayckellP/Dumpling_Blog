@@ -17,6 +17,10 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
+<<<<<<< HEAD
+=======
+            @include('translate')
+>>>>>>> 2339bf0 (commit 11:13 hours)
            
 
             <!-- Page Heading -->
