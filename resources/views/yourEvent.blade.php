@@ -13,7 +13,10 @@
        
 @endsection
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @extends('layout')
 >>>>>>> cc19cb8 (Commit 2)
+=======
+>>>>>>> 53dd12b (commit translate component)
 @extends('layouts.navigation')

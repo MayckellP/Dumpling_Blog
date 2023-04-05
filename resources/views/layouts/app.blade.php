@@ -18,9 +18,12 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             @include('translate')
 >>>>>>> 2339bf0 (commit 11:13 hours)
+=======
+>>>>>>> 53dd12b (commit translate component)
            
 
             <!-- Page Heading -->
@@ -35,10 +38,17 @@
             <!-- Page Content -->
             <main>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 @include('translate')
 =======
             @include('components.translateButton')
 >>>>>>> 144f17e (Transale Button fixed)
+=======
+            @include('components.translateButton')
+=======
+                @include('translate')
+>>>>>>> 149c361 (commit translate component)
+>>>>>>> 53dd12b (commit translate component)
                 {{ $slot }}
             </main>
         </div>

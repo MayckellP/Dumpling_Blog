@@ -22,6 +22,7 @@ class StaticController extends Controller
     public function contact(){
         return view('contact');
     }
+<<<<<<< HEAD
     public function yourEvent(){
         return view('yourEvent');
     }
@@ -42,6 +43,8 @@ class StaticController extends Controller
     public function translate(){
         return view('translate');
     }
+=======
+>>>>>>> 53dd12b (commit translate component)
     public function yourEvent(){
         return view('yourEvent');
     }

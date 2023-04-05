@@ -550,6 +550,7 @@
   </div>
 </nav>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7cb4d1f (commit 11:13 hours)
 <<<<<<< HEAD
 >>>>>>> 2339bf0 (commit 11:13 hours)
@@ -558,4 +559,10 @@
 @extends('translate')
 @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
 >>>>>>> 56bbc2c (Commit 2)
+<<<<<<< HEAD
 >>>>>>> cc19cb8 (Commit 2)
+=======
+=======
+@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
+>>>>>>> 149c361 (commit translate component)
+>>>>>>> 53dd12b (commit translate component)
