@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,24 @@ Route::get('contact', [StaticController::class, 'contact']);
 =======
 /*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
 >>>>>>> da57728 (Fuktionen (Users / Besucher))
+=======
+/*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
+=======
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+Route::get('home',[StaticController::class, 'home'] );
+Route::get('about', [StaticController::class, 'about']);
+Route::get('contact', [StaticController::class, 'contact']);
+>>>>>>> 497ed25 (commit-05-April-23)
+>>>>>>> f64d6a9 (commit-05-April-23)
 
 Route::get('/', function () {
     return view('homePage');

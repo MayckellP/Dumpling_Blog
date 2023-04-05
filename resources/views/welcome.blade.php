@@ -17,7 +17,16 @@
         </style>
     </head>
     <body class="antialiased">
+<<<<<<< HEAD
         
+=======
+        <div class="reletive py-4 px-6">
+            <nav>
+                <a href="/home">Home</a>
+                <a href="/about">About-us</a>
+                <a href="/contact">Contact-us</a>
+            </nav>
+>>>>>>> f64d6a9 (commit-05-April-23)
         </div>
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))

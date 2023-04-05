@@ -14,6 +14,7 @@ class StaticController extends Controller
         return view('home');
     }
     public function about(){
+<<<<<<< HEAD
         return view('about');
     }
 
@@ -24,5 +25,13 @@ class StaticController extends Controller
         return view('yourEvent');
     }
     
+=======
+        return view('about-us');
+    }
+
+    public function contact(){
+        return view('contact-us');
+    }
+>>>>>>> f64d6a9 (commit-05-April-23)
 
 }
