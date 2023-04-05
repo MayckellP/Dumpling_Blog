@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>showPicker demo</title>
+<style>
+  h2 {
+    margin-bottom: 4px;
+    padding-left: 4px;
+  }
+  a {
+    margin-bottom: 24px;
+    padding-left: 4px;
+  }
+  label {
+    font-family: monospace;
+  }
+  input {
+    display: block;
+    margin-top: 4px;
+  }
+  p {
+    padding: 4px;
+  }
+</style>
+<h2>HTMLInputElement showPicker()</h2>
+<a href="https://github.com/whatwg/html/pull/7319"
+  >https://github.com/whatwg/html/pull/7319</a
+>
+
+<main>
+  <p>
+  </p>
+  <p>
+    <div class="cont-calendarFilter">
+        <div class="cont-calendar">
+            <img src="images/Up.svg" alt="" class="mt-3">
+            <div class="back-calendar">   
+    <button id="btn-month"><img src='images/calendar.svg'></button>
+    <form action="" class="form-start"></form>  
+    <input type="month" id="month" name="month" hidden />
+</form>
+    <p>01</p>
+<p class="month-name">January</p>
+        </div>
+        <img src="images/Down.svg" alt="" class="mt-2">
+    </div>
+    <a href="" class="btn-day">
+        DAYS
+    </a>
+</div>
+</div>
+
+</main>
+<script>
+  document.querySelector("#btn-month").onclick = () => {
+      const input = document.querySelector("#month");
+      try {
+        input.showPicker();
+      } catch(error) {
+        window.alert(error);
+      }
+  };
+</script>

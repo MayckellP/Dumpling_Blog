@@ -178,7 +178,7 @@
                 align-items:center;               
             }
             .cont-calendar img {
-                width:35%;
+                width:135%;
             }
             .back-calendar{
                 background-color:#D9D9D9;
@@ -194,17 +194,20 @@
             .form-start{
                 width:65%;
                 height:65%;
-                background: url('/images/calendar.svg') no-repeat ;
+                background: url('/images/calendar.svg') no-repeat ; 
                 background-size:100% 100%;
                 display:flex;
                 justify-content:center;
                 align-items:center;
+                z-index: 0;
             }
             .form-start p{
                 font-size:20px;
                 margin-top: 2rem;
                 color:white;
                 font-weight:bold;
+                z-index: 0;
+                position: fixed;
             } 
             .month-name {
                 height:35%;
@@ -220,31 +223,12 @@
                 text-align:center;
                 border-radius:10px;
             }
+            #btn-month{
+                position:absolute;
+                z-index: 3;
+                opacity:0%;
+            }
         </style>
-        <script>
-            /* document.querySelectorAll("button").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const input = event.srcElement.previousElementSibling;
-    try {
-      input.showPicker();
-    } catch (error) {
-      window.alert(error);
-    }
-  });
-}); */
-const button = document.querySelector("button");
-const dateInput = document.querySelector("input");
-button.addEventListener("click", async () => {
-  try {
-    await dateInput.showPicker();
-    // A date picker is shown.
-  } catch (error) {
-    // Use external library when this fails.
-  }
-});
-            </script>
-
-
     <div class="cont-home">
         <section class="events-group">  
             <label class="switch mb-3">
@@ -252,20 +236,17 @@ button.addEventListener("click", async () => {
               <span class="general_events">
               </span>
             </label>
-
-            <label class="switch mb-3">
+ <label class="switch mb-3">
               <input type="checkbox">
               <span class="foods">
               </span>
             </label>
-
-            <label class="switch mb-3">
+<label class="switch mb-3">
               <input type="checkbox">
               <span class="clubs">
               </span>
             </label>
-
-            <label class="switch mb-3">
+<label class="switch mb-3">
               <input type="checkbox">
               <span class="blogs">
               </span>
@@ -275,15 +256,18 @@ button.addEventListener("click", async () => {
             <div class="cont-calendar">
                 <img src="/images/Up.svg" alt="" class="mt-3">
                 <div class="back-calendar">
+                    <button id="btn-month">
+                        
+                        <img src='/images/calendar.svg'> 
+                    </button>
                     <form action="" class="form-start">
-                    <!-- <input type="month" hidden/> -->
-  <!-- <button id="month">     -->
-                    <p>01</p>
                     
-                    <p class="month-name">January
-         <!-- </button> -->
-                    </p>
+                    <input type="date" id="month" name="month" hidden />
+                    
+                    <p>01</p>
                     </form>
+                    
+                    <p class="month-name">January</p>
                 </div>
                 <img src="/images/Down.svg" alt="" class="mt-2">
             </div>
@@ -292,5 +276,16 @@ button.addEventListener("click", async () => {
             </a>
         </div>
     </div>
+
+    <script>
+    document.querySelector("#btn-month").onclick = () => {
+      const input = document.querySelector("#month");
+      try {
+        input.showPicker();
+      } catch(error) {
+        window.alert(error);
+      }
+  };
+</script>
         
 </x-app-layout>
