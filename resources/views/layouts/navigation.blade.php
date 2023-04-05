@@ -320,9 +320,12 @@
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
 @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
 =======
     </div>
   </div>
 </nav>
 >>>>>>> 1ae20c8 (Navbar)
+=======
+>>>>>>> 144f17e (Transale Button fixed)

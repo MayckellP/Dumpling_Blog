@@ -30,7 +30,11 @@
 
             <!-- Page Content -->
             <main>
+<<<<<<< HEAD
                 @include('translate')
+=======
+            @include('components.translateButton')
+>>>>>>> 144f17e (Transale Button fixed)
                 {{ $slot }}
             </main>
         </div>
