@@ -1,3 +1,5 @@
+<!-- ARBEIT MIT "SWITCH" UND NICHT "IF-ELSE-IF" -->
+
 <x-app-layout>
     @if(Request::path() === "General_Events")
         <x-slot name="header">
@@ -5,6 +7,7 @@
                 {{ __('General Events') }}
             </h2>
         </x-slot>
+        @include('publications.publication') 
         
     
     @elseif(Request::path() === "Food_Events")
@@ -13,6 +16,7 @@
                 {{ __('Food Events') }}
             </h2>
         </x-slot>
+        @include('publications.publication') 
          
 
     @elseif(Request::path() === "Pub_Events")
@@ -21,6 +25,7 @@
                 {{ __('Pub Events') }}
             </h2>
         </x-slot>
+        @include('publications.publication') 
         
 
     @elseif(Request::path() === "Smalls_Events")
@@ -29,11 +34,13 @@
                 {{ __('General Events') }}
             </h2>
         </x-slot>
+        @include('publications.publication') 
+        
         
 
 
 
-    @elseif(Request::path() == "details/{$publicationsDetails->id}")
+    @elseif(Request::path() === "details/{$publicationsDetails->id}")
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('Details') }}
@@ -49,5 +56,5 @@
         </x-slot>
         @include('publications.partials.publicationEdit')
     @endif
-    @include('publications.publication') 
+    
 </x-app-layout>

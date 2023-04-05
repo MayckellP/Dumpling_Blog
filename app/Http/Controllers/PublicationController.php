@@ -40,12 +40,13 @@ class PublicationController extends Controller
         return redirect('/homePage');
     }
     public function showOnePublication($id){
+        $publications = Publication::findOrFail($id);
         $publicationsDetails = Publication_details::findOrFail($id);
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes],);
+        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications]);
     }
     public function showPublicationToEdit( $id){
         $publicationsDetails = Publication_details::findOrFail($id);
@@ -64,7 +65,7 @@ class PublicationController extends Controller
 
         $publicationsDetails->save();
 
-        return redirect('dashboard');
+        return redirect('homePage');
     }
     public function like(Request $request){
         $publicationDetails = new Publication_details();
@@ -76,5 +77,13 @@ class PublicationController extends Controller
         $like->save();
 
         return redirect('/homePage');
+    }
+    public function showYourEvents(){
+        $messages = Message::all()->sortByDesc('created_at');
+        $publications = Publication::all()->sortByDesc('created_at');
+        $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
+
+        return view('yourEvents', 
+        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
 }
