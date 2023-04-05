@@ -1,20 +1,10 @@
 <x-app-layout>
-        <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                {{ __('ABOUT US') }}
-            </h2>
-        </x-slot>
 
         <style>
             .cont-home{
-                width:100%;
-                background-color:black;
-                position:absolute;
-                bottom:0px;
-                left:0px;
+                height:85vh;
                 display:flex;
-                flex-direction:column-reverse;
-                padding: 0.5rem;
+                flex-direction:column;
             }
             .events-group{
                 width:14rem;
@@ -45,16 +35,16 @@
              z-index: 2;
             }
             .general_events{
-                background-color: #ABDD85;
+                background-color: #0497C9;
             }
             .foods{
-                background-color: #EADE71;
+                background-color: #A5FFD6;
             }
             .clubs{
-                background-color: #F47373;
+                background-color: #DBB1BC;
             }
             .blogs{
-                background-color: #B9B6C0;
+                background-color: #D3C4E3;
             }
             
             .general_events:before, .foods:before, .clubs:before, .blogs:before {
@@ -83,19 +73,6 @@
                 background:url("/images/bxs-news.svg") white center no-repeat;
             }
             
-            input:checked + .general_events {
-             background-color: #ABDD85;
-            }
-            input:checked + .foods {
-             background-color: #EADE71;
-            }
-            input:checked + .clubs {
-             background-color: #F47373;
-            }
-            input:checked + .blogs {
-             background-color: #B9B6C0;
-            }
-            
             input:focus + .general_events, 
             input:focus + .foods,
             input:focus + .clubs,
@@ -109,7 +86,7 @@
             input:checked + .blogs:before {
              -webkit-transform: translateX(26px);
              -ms-transform: translateX(26px);
-             transform: translateX(10rem);
+             transform: translateX(11.5rem);
             }
             
             /*------ ADDED CSS ---------*/
@@ -171,13 +148,14 @@
                 display:flex;
                 justify-content:space-around;
                 align-items:center;
+                z-index: 2;
             }
-            .cont-calendar{
+            #cont-calendar{
                 display:flex;
                 flex-direction:column;
-                align-items:center;               
+                align-items:center;         
             }
-            .cont-calendar img {
+            #cont-calendar img {
                 width:35%;
             }
             .back-calendar{
@@ -211,7 +189,7 @@
                 font-size:20px;
                 margin:0;
             }
-            .btn-day{
+            #link-calendar{
                 width: 45%;
                 background-color:#0497C9;
                 color:white;
@@ -219,51 +197,105 @@
                 font-weight:bold;
                 text-align:center;
                 border-radius:10px;
+                transition:1s;  
+            }
+            .cont-home video {
+              position: fixed;
+              right: 0;
+              bottom: 0;
+              min-height:110%;
+              min-width:100%;
+              z-index: 1;
+            }
+            .logo-back{
+                z-index: 2;
+                margin-bottom:10rem;
+            }
+            #all_ok{
+                display:none;
+            }
+            .hidden{
+                animation: moveBot 0.5s ease 0s 1 normal forwards;
+            }
+            @keyframes moveBot {
+            	0% {
+            		opacity: 1;
+            		transform: translateY(0);
+            	}
+            
+            	100% {
+            		opacity: 0;
+            		transform: translateY(25px);
+            	}
+            }
+            .visible{
+                animation: moveTop 0.5s ease 0s 1 normal forwards;
+            }
+            @keyframes moveTop {
+            	0% {
+            		opacity: 0;
+            		transform: translateY(-25px);
+            	}
+            
+            	100% {
+            		opacity: 1;
+            		transform: translateY(0);
+            	}
             }
         </style>
 
+        
+        <div class="cont-home">
+            <video src="/images/background_mobile.mp4" 
+                autoplay="true" 
+                muted="true" 
+                loop="true" 
+                poster="https://carontestudio.com/img/contacto.jpg">
+            </video>
+            <img src="/images/signWithLogo.svg" alt="" class="logo-back w-50 m-auto">
 
-    <div class="cont-home">
-        <section class="events-group">  
-            <label class="switch mb-3">
-              <input type="checkbox">
-              <span class="general_events">
-              </span>
-            </label>
-
-            <label class="switch mb-3">
-              <input type="checkbox">
-              <span class="foods">
-              </span>
-            </label>
-
-            <label class="switch mb-3">
-              <input type="checkbox">
-              <span class="clubs">
-              </span>
-            </label>
-
-            <label class="switch mb-3">
-              <input type="checkbox">
-              <span class="blogs">
-              </span>
-            </label>
-        </section>
-        <div class="cont-calendarFilter">
-            <div class="cont-calendar">
-                <img src="/images/Up.svg" alt="" class="mt-3">
+            <div class="cont-calendarFilter">
+            <div class="cont-calendar" id="cont-calendar">
+                <img src="/images/Up.svg" alt="" class="mb-2">
                 <div class="back-calendar">
                     <form action="" class="form-start">
                         <p>01</p>
                     </form>
                     <p class="month-name">January</p>
                 </div>
-                <img src="/images/Down.svg" alt="" class="mt-2">
+                <img src="/images/Down.svg" alt="" class="mt-3">
             </div>
-            <a href="" class="btn-day">
+            <a href="" class="btn-day" id="link-calendar">
                 DAYS
             </a>
+            <img src="/images/Calendar_2.png" alt="" id="all_ok">
         </div>
+
+        <section class="events-group">  
+            <label class="switch mb-3">
+              <input type="checkbox" id="event" onclick=" return selectEvent()">
+              <span class="general_events">
+              </span>
+            </label>
+
+            <label class="switch mb-3">
+              <input type="checkbox" id="food" onclick=" return selectEvent()">
+              <span class="foods">
+              </span>
+            </label>
+
+            <label class="switch mb-3">
+              <input type="checkbox" id="club" onclick=" return selectEvent()">
+              <span class="clubs">
+              </span>
+            </label>
+
+            <label class="switch mb-3">
+              <input type="checkbox" id="blog" onclick=" return selectEvent()">
+              <span class="blogs">
+              </span>
+            </label>
+        </section>
     </div>
         
 </x-app-layout>
