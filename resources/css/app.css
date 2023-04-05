@@ -1,3 +1,8 @@
+.navba {
+    background-color:transparent;  
+}
+
 
 /* this code take the dot away from the li element */
 nav ul { list-style-type: none; }
+

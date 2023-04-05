@@ -24,6 +24,7 @@
         .cont-img img{
             width:100%;
             opacity:50%;
+            
         }
         .events{
             position: absolute;
@@ -67,6 +68,10 @@
             loop="true" 
             poster="https://carontestudio.com/img/contacto.jpg">
         </video>
+        <div class="container-fluid">
+        @include('layouts.navbar')
+        </div>
+        <br>
         <div class="cont-img">
             <img src="/images/signWithLogo.svg" alt="">
         </div>
