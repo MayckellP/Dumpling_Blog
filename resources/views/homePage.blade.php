@@ -60,6 +60,7 @@
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/smallEventSlide.png') no-repeat center;
             background-size:cover;
         }
+        
     </style>
     <div class="cont-general">
         <video src="/images/background.mp4" 
@@ -71,7 +72,7 @@
         <div class="container-fluid">
         @include('layouts.navbar')
         </div>
-        <br>
+        
         <div class="cont-img">
             <img src="/images/signWithLogo.svg" alt="">
         </div>
