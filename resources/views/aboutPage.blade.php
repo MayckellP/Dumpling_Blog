@@ -221,6 +221,28 @@
                 border-radius:10px;
             }
         </style>
+        <script>
+            /* document.querySelectorAll("button").forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const input = event.srcElement.previousElementSibling;
+    try {
+      input.showPicker();
+    } catch (error) {
+      window.alert(error);
+    }
+  });
+}); */
+const button = document.querySelector("button");
+const dateInput = document.querySelector("input");
+button.addEventListener("click", async () => {
+  try {
+    await dateInput.showPicker();
+    // A date picker is shown.
+  } catch (error) {
+    // Use external library when this fails.
+  }
+});
+            </script>
 
 
     <div class="cont-home">
@@ -254,9 +276,14 @@
                 <img src="/images/Up.svg" alt="" class="mt-3">
                 <div class="back-calendar">
                     <form action="" class="form-start">
-                        <p>01</p>
+                    <!-- <input type="month" hidden/> -->
+  <!-- <button id="month">     -->
+                    <p>01</p>
+                    
+                    <p class="month-name">January
+         <!-- </button> -->
+                    </p>
                     </form>
-                    <p class="month-name">January</p>
                 </div>
                 <img src="/images/Down.svg" alt="" class="mt-2">
             </div>
