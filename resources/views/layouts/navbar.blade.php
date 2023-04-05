@@ -40,9 +40,18 @@
             </div>
 
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-2">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house"></i>Home</a>
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house-heart"></i>About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-book"></i>Contact US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-headset"></i>Support</a>
                     </li>
                     {{-- <li class="nav-item">
                          @auth
