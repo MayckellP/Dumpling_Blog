@@ -14,14 +14,17 @@ class StaticController extends Controller
         return view('home');
     }
     public function about(){
-        return view('about-us');
+        return view('about');
     }
 
     public function contact(){
-        return view('contact-us');
+        return view('contact');
     }
     public function translate(){
         return view('translate');
+    }
+    public function yourEvent(){
+        return view('yourEvent');
     }
     
 

@@ -9,7 +9,6 @@
     box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
   }
 </style>
-
 <nav class="navbar navbar-dark bg-black py-3 opacity-75">
   <div class="container-fluid">
     <div class="cont-logo w-25 ps-4">
@@ -18,16 +17,16 @@
         </a>
     </div>
     <div class="cont-links w-75 d-flex justify-content-end align-items-center">
-        <a href="/home" class="text-decoration-none me-5 text-white fs-4">
+        <a href="home" class="text-decoration-none me-5 text-white fs-4">
             Home
         </a>
-        <a href="/about" class="text-decoration-none me-5 text-white fs-4">
+        <a href="about" class="text-decoration-none me-5 text-white fs-4">
             About us
         </a>
-        <a href="/contact" class="text-decoration-none me-5 text-white fs-4">
+        <a href="contact" class="text-decoration-none me-5 text-white fs-4">
             Contact us
         </a>
-        <a href="/yourEvents" class="text-decoration-none me-5 text-white fs-4">
+        <a href="yourEvent" class="text-decoration-none me-5 text-white fs-4">
             Your Events
         </a>
 
@@ -114,3 +113,5 @@
     </div>
   </div>
 </nav>
+@extends('translate')
+@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
