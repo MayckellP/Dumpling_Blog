@@ -15,6 +15,7 @@ class StaticController extends Controller
     }
     public function about(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('about');
     }
 
@@ -27,16 +28,22 @@ class StaticController extends Controller
     
 =======
         return view('about-us');
+=======
+        return view('about');
+>>>>>>> cc19cb8 (Commit 2)
     }
 
     public function contact(){
-        return view('contact-us');
+        return view('contact');
     }
 <<<<<<< HEAD
 >>>>>>> f64d6a9 (commit-05-April-23)
 =======
     public function translate(){
         return view('translate');
+    }
+    public function yourEvent(){
+        return view('yourEvent');
     }
     
 >>>>>>> 2339bf0 (commit 11:13 hours)

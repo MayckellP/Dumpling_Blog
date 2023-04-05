@@ -12,4 +12,8 @@
         </div>
        
 @endsection
+<<<<<<< HEAD
+=======
+@extends('layout')
+>>>>>>> cc19cb8 (Commit 2)
 @extends('layouts.navigation')

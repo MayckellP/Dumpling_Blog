@@ -39,6 +39,7 @@ Route::get('contact', [StaticController::class, 'contact']);
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('yourEvent',[StaticController::class, 'yourEvent']);
 Route::get('translate',[StaticController::class, 'translate']);
 Route::get('home',[StaticController::class, 'home'] );
 Route::get('about', [StaticController::class, 'about']);
