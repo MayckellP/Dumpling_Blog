@@ -61,20 +61,22 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
-    public function addFoto(Request $request, $id){
+    public function addFoto(Request $request, $id)
+{
+    $user = User::findOrFail($id);
 
-        $user = User::findorFail($id);
-        
-        if($request->hasFile("foto")){
-            $subNameImage = date('d-m-Y_h:i');
-            $image = $request->file("foto");
-            $nameImage = Str::slug($user->name)."_".$subNameImage.".".$image->guessExtension();
-            $routeImage = public_path("DB_Img/post/");
-            $image->move($routeImage,$nameImage);
-            $user->foto = $nameImage;
-        }
-
-       $user->save();
-       return Redirect::route('profile.edit');
+    if ($request->hasFile('foto')) {
+        $subNameImage = date('d-m-Y_h:i');
+        $image = $request->file('foto');
+        $nameImage = Str::slug($user->name) . '_' . $subNameImage . '.' . $image->guessExtension();
+        $routeImage = public_path('DB_Img/post/');
+        $image->move($routeImage, $nameImage);
+        $user->foto = $nameImage;
+        $user->save();
     }
+
+    return redirect()->route('profile.edit');
+}
+
+    
 }

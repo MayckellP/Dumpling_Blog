@@ -1,20 +1,32 @@
 <nav class="navbar navbar-dark shadow-5-strong fixed-top navbar-expand-sm">
     <div class="container-fluid">
         {{--  From her the Login and profile header start  --}}
-        <div class="dropdown">
+        <div class="dropdown">       
+        @auth
+            @if(Auth::user()->foto == NULL)
+                <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+            @elseif($condition)
+                <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/DB_Img/post/{{Auth::user()->foto }}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+            @else
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+              </button> 
+                @endif
+        @endauth
+        {{--  
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-person-circle"></i>
-          </button>
+          </button>  --}}
         <ul class="dropdown-menu">
-        <a class="nav-link text-dark" href="#"><li class="nav-item"></a>
+        <a class="nav-link text-whit" href="#"><li class="nav-item"></a>
             @auth
                 <li class="nav-item">
-                    <a class="nav-link text-dark ms-2" href="#"><i class="bi bi-person-circle"></i>{{ Auth::user()->name }}</a>
+                    <a class="nav-link text-white ms-2" href="#"><i class="bi bi-person-circle"></i>{{ Auth::user()->name }}</a>
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-link text-dark"><i class="bi bi-door-closed"></i>Logout</button>
+                        <button type="submit" class="btn btn-link text-white"><i class="bi bi-door-closed"></i>Logout</button>
                     </form>
                 </li>
             @else
