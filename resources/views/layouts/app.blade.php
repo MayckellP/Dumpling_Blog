@@ -29,6 +29,7 @@
 
             <!-- Page Content -->
             <main>
+            @include('components.translateButton')
                 {{ $slot }}
             </main>
         </div>

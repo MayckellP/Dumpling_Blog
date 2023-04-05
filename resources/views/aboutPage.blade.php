@@ -206,7 +206,7 @@
           position: fixed;
           right: 0;
           bottom: 0;
-          min-height:110%;
+          min-height:90%;
           min-width:100%;
           z-index: 1;
         }
