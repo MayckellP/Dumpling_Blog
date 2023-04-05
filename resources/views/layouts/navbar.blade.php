@@ -40,9 +40,7 @@
                     <li class="nav-item">
                         <a class="nav-link active text-dark" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house"></i>Home</a>
                     </li>
-                    {{--  Here the login credentialswould be in the hamburger menu
-                        
-                        <li class="nav-item">
+                    <li class="nav-item">
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link text-dark" href="#">{{ Auth::user()->name }}</a>
@@ -62,7 +60,7 @@
                                     <a class="nav-link text-dark" href="{{ route('register') }}"><i class="bi bi-card-checklist"></i>Register</a>
                                 </li>
                             @endif
-                        @endauth  --}}
+                        @endauth
                  
                 </ul>
               
