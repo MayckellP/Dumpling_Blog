@@ -18,6 +18,7 @@ nav ul { list-style-type: none; }
     display: none;
   }
 }
+/*this is the style tag for the avatar on the navbar */
 .avatar {
     vertical-align: middle;
     width: 50px;

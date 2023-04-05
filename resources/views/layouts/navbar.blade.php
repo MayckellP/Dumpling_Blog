@@ -11,11 +11,7 @@
                 @else
                 <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
         @endauth
-        {{--  
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle"></i>
-          </button>  --}}
-        <ul class="dropdown-menu">
+       <ul class="dropdown-menu">
         <a class="nav-link text-whit" href="#"><li class="nav-item"></a>
             @auth
                 <li class="nav-item">
