@@ -5,13 +5,11 @@
         @auth
             @if(Auth::user()->foto == NULL)
                 <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
-            @elseif($condition)
+                @else
                 <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/DB_Img/post/{{Auth::user()->foto }}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
-            @else
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-circle"></i>
-              </button> 
                 @endif
+                @else
+                <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
         @endauth
         {{--  
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
