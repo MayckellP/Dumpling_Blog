@@ -60,7 +60,14 @@
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/smallEventSlide.png') no-repeat center;
             background-size:cover;
         }
-        
+        @import "https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Tilt+Prism&display=swap";
+tabs {
+	font-family: 'Inria Sans', sans-serif;
+	font-family: 'Tilt Prism', cursive;
+	color: #FFFFFF;
+	size: 28PX;
+	font-weight: bold;
+}
     </style>
     <div class="cont-general">
         <video src="/images/background.mp4" 
