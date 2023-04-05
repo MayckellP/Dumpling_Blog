@@ -34,24 +34,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end shadow-5-strong" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
-                {{--  <button type="button" class="btn-close bg-primary" data-bs-dismiss="offcanvas" aria-label="Close"></button>  --}}
-            </div>
+            
 
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-center flex-grow-1 pe-2">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-2">
                     <li class="nav-item">
-                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house"></i>Home</a>
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house listicons"></i>Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house-heart"></i>About US</a>
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house-heart listicons"></i>About US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-book"></i>Contact US</a>
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-book listicons"></i>Contact US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-headset"></i>Support</a>
+                        <a class="nav-link active text-white col ms-5" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-headset listicons"></i>Support</a>
                     </li>
                     {{-- <li class="nav-item">
                          @auth

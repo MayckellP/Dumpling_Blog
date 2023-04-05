@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Tilt+Prism&display=swap');
 
 .navba {
     background-color:transparent;  
@@ -7,3 +8,13 @@
 /* this code take the dot away from the li element */
 nav ul { list-style-type: none; }
 
+.nav-link {
+    font-family: 'Inria Sans', sans-serif;
+    
+}
+/* This will make the list icons only show in the hamburger menu */
+@media only screen and (min-width: 600px) {
+  .listicons{
+    display: none;
+  }
+}
