@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark shadow-5-strong fixed-top navbar-expand-sm">
+<nav class="navbar navbar-dark shadow-5-strong fixed-top">
     <div class="container-fluid">
         {{--  From her the Login and profile header start  --}}
-        <div class="dropdown">       
+        <div class="dropend">       
         @auth
             @if(Auth::user()->foto == NULL)
                 <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
@@ -36,7 +36,9 @@
             @endauth
         </ul>
     </div>
-        <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end shadow-5-strong" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">

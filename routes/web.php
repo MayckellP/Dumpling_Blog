@@ -26,7 +26,9 @@ Route::get('/yourEvents', function(){
     return view('yourEvents');
 })->name('yourEvents');
 
-
+Route::get('/blog', function () {
+    return view('blog');
+});
 
 
 
