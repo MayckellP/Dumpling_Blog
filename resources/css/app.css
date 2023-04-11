@@ -1,27 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Tilt+Prism&display=swap');
 
 .navbar {
+  background: rgba(0, 0, 0, 0.3);
+}
+.dropdown-menu a:hover { 
   background: rgba(0, 0, 0, 0.5);
 }
-
 
 /* this code take the dot away from the li element */
 nav ul { list-style-type: none; }
 
 .navbar-toggler {
   display: block;
+  color:rgba(0, 0, 0, 0.5);
 }
 
 .nav-link {
     font-family: 'Inria Sans', sans-serif;
-    
+      }
+
+
+
+.navtext{
+  display: inline-block;
+  color: #fff;
+  text-decoration:none;
+ }
+ .navtext:hover {
+  text-decoration: underline;
+  
 }
-/* This will make the list icons only show in the hamburger menu */
-@media only screen and (min-width: 600px) {
-  .listicons{
+@media (max-width: 767px) {
+  .navtext {
     display: none;
   }
 }
+@media (min-width: 767px) {
+  .navtextside {
+    display: none;
+    text-decoration:none;
+  }
+  .navtextside:hover {
+    text-decoration: underline;
+  }
+  .firstclass {
+    margin-top: 40%;
+  }
+}
+
+
 /*this is the style tag for the avatar on the navbar */
 .avatar {
     vertical-align: middle;
@@ -29,14 +56,14 @@ nav ul { list-style-type: none; }
     height: 50px;
     border-radius: 50%;
  }
- /*navbar toggler color */
- .navbar-toggler{
-  color:rgba(0, 0, 0, 0.5);
- }
-
+/* extra Menu */
+.special {
+  width: 100%;
+  height: 100%;
+}
 
  /* cards blog */
-
+/* 
  .grid-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -120,4 +147,4 @@ span,p {
 }
 .btn-dpink {
   background: #e8d3fc;
-}
+} */
