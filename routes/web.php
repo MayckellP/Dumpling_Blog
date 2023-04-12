@@ -118,7 +118,4 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
-=======
-Route::post('/add-comment', 'App\Http\Controllers\PublicationDetailsController@addComment')->name('add-comment');
-Route::post('/add-title', 'App\Http\Controllers\PublicationDetailsController@addtitle')->name('add-title');
->>>>>>> fa66b06 (title)
+

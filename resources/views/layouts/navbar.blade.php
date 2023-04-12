@@ -8,9 +8,10 @@
             @else
             <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/DB_Img/post/{{Auth::user()->foto }}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
             @endif
-            @else
-            <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
             @endauth
+            @guest
+            <img class="image rounded-circle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" src="/images/DefaultFoto.jpg" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
+            @endguest
             <ul class="dropdown-menu">
                 <a class="nav-link text-white" href="#">
                     <li class="nav-item">
@@ -40,7 +41,7 @@
         <a class="navtext card-title text-white fw-bold fs-3" href="/General_Events">GENERAL EVENTS</a>
         <a class="navtext card-title text-white fw-bold fs-3" href="Food_Events">EAT & DRINK</a>
         <a class="navtext card-title text-white fw-bold fs-3" href="Pub_Events">CLUBs</a>
-        <a class="navtext card-title text-white fw-bold fs-3" href="Smalls_Events">BLOG</a>
+        <a class="navtext card-title text-white fw-bold fs-3" href="/blog">BLOG</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
