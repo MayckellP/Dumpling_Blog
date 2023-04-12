@@ -98,6 +98,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/{id}', [PublicationController::class, 'showPublicationToEdit'])->name('publication.partials.publicationEdit/edit');
     Route::post('/edit_event/{id}', [PublicationController::class, 'edit']);
 });
+
 /*-------------------------------WITHOUT AUTH */
 Route::get('/details/{id}', [PublicationController::class, 'showOnePublication'])->name('publication.partials.publicationDetails/details');
 
@@ -112,8 +113,8 @@ Route::get('/details/{id}', [PublicationController::class, 'showOnePublication']
 Route::middleware('auth')->group(function () {
     Route::post('/create_message/{id}', [MessageController::class, 'createMessage'])->name('publication.partials.publicationEdit/edit');
 });
+
 /*-------------------------------WITHOUT AUTH */
 
 
 require __DIR__.'/auth.php';
-

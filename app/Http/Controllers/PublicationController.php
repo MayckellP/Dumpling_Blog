@@ -14,9 +14,7 @@ class PublicationController extends Controller
         $messages = Message::all()->sortByDesc('created_at');
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
 
-        return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages]);
-        
+        return view('dashboard',['publicationsDetails' => $publicationsDetails],['messages' => $messages]);
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -46,14 +44,12 @@ class PublicationController extends Controller
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
-        return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications]);
+        return view('dashboard',['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications]);
     }
     public function showPublicationToEdit( $id){
         $publicationsDetails = Publication_details::findOrFail($id);
 
-        return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails]);
+        return view('dashboard',['publicationsDetails' => $publicationsDetails]);
     }
     public function edit(Request $request, $id){
         $publicationsDetails = Publication_details::findOrFail($id);
@@ -84,8 +80,6 @@ class PublicationController extends Controller
         $publications = Publication::all()->sortByDesc('created_at');
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
 
-        return view('yourEvents', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
+        return view('yourEvents',['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
-    
 }

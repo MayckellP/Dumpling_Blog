@@ -1,85 +1,93 @@
 <x-app-layout>
     <style>
-        .cont-general{
-            height:91vh;
+        .cont-general {
+            height: 91vh;
             display: flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+
         video {
-          position: fixed;
-          right: 0;
-          bottom: 0;
-          min-width: 105%;
-          min-height: 100%;
-          transform: translateX(calc((100% - 100vw) / 2));
-          z-index: 0;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 105%;
+            min-height: 100%;
+            transform: translateX(calc((100% - 100vw) / 2));
+            z-index: 0;
         }
-        .cont-img{
-            width:30%;
-            margin-bottom:25%;
+
+        .cont-img {
+            width: 30%;
+            margin-bottom: 25%;
             z-index: 2;
         }
-        .cont-img img{
-            width:100%;
-            opacity:50%;
-            
-        }
-        .events{
-            position: absolute;
-            bottom:0px;
-            width:75%;
-        }
-        .card{
-            height:35vh;
-            text-align:center;
-            background:none;
-            width:23%;
-            margin:10px;
-            padding:0;
+
+        .cont-img img {
+            width: 100%;
+            opacity: 50%;
 
         }
-        .cont-gen{
-            height:100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/clubSlide.png') no-repeat ;
-            background-size:cover;
+
+        .events {
+            position: absolute;
+            bottom: 0px;
+            width: 75%;
         }
-        .cont-food{
-            height:100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/foodslide.png') no-repeat ;
-            background-size:cover;
+
+        .card {
+            height: 35vh;
+            text-align: center;
+            background: none;
+            width: 23%;
+            margin: 10px;
+            padding: 0;
+
         }
-        .cont-pub{
-            height:100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/foodslide.png') no-repeat ;
-            background-size:cover;
+
+        .cont-gen {
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/clubSlide.png') no-repeat;
+            background-size: cover;
         }
-        .cont-small{
-            height:100%;
+
+        .cont-food {
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/foodslide.png') no-repeat;
+            background-size: cover;
+        }
+
+        .cont-pub {
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/foodslide.png') no-repeat;
+            background-size: cover;
+        }
+
+        .cont-small {
+            height: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/smallEventSlide.png') no-repeat center;
-            background-size:cover;
+            background-size: cover;
         }
+
         @import "https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Tilt+Prism&display=swap";
-tabs {
-	font-family: 'Inria Sans', sans-serif;
-	font-family: 'Tilt Prism', cursive;
-	color: #FFFFFF;
-	size: 28PX;
-	font-weight: bold;
-}
+
+        tabs {
+            font-family: 'Inria Sans', sans-serif;
+            font-family: 'Tilt Prism', cursive;
+            color: #FFFFFF;
+            size: 28PX;
+            font-weight: bold;
+        }
+
     </style>
     <div class="cont-general">
-        <video src="/images/background.mp4" 
-            autoplay="true" 
-            muted="true" 
-            loop="true" 
-            poster="https://carontestudio.com/img/contacto.jpg">
+        <video src="/images/background.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg">
         </video>
         <div class="container-fluid">
-        @include('layouts.navbar')
+            @include('layouts.navbar')
         </div>
-        
+
         <div class="cont-img">
             <img src="/images/signWithLogo.svg" alt="">
         </div>
@@ -123,7 +131,7 @@ tabs {
                             </div>
                         </div>
                     </a>
-                </div> 
+                </div>
             </div>
         </section>
     </div>

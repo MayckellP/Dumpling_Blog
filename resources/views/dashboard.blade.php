@@ -8,7 +8,7 @@
                 {{ __('General Events') }}
             </h2>
         </x-slot>
-        @include('publications.publication') 
+        @include('publications.publication')
         
     
     @elseif(Request::path() === "Food_Events")
@@ -17,7 +17,7 @@
                 {{ __('Food Events') }}
             </h2>
         </x-slot>
-        @include('publications.publication') 
+        @include('publications.publication')
          
 
     @elseif(Request::path() === "Pub_Events")
@@ -26,7 +26,7 @@
                 {{ __('Pub Events') }}
             </h2>
         </x-slot>
-        @include('publications.publication') 
+        @include('publications.publication')
         
 
     @elseif(Request::path() === "Smalls_Events")
@@ -35,7 +35,7 @@
                 {{ __('General Events') }}
             </h2>
         </x-slot>
-        @include('publications.publication') 
+        @include('publications.publication')
         
         
 
