@@ -16,6 +16,7 @@ class PublicationController extends Controller
 
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],['messages' => $messages]);
+        
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -86,4 +87,5 @@ class PublicationController extends Controller
         return view('yourEvents', 
         ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
+    
 }
