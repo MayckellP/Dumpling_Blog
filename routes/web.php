@@ -6,8 +6,6 @@ use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +21,10 @@ Route::get('home',[StaticController::class, 'home'] );
 Route::get('about', [StaticController::class, 'about']);
 Route::get('contact', [StaticController::class, 'contact']);
 
+da57728 (Fuktionen (Users / Besucher))
 =======
 /*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
->>>>>>> da57728 (Fuktionen (Users / Besucher))
-=======
+
 /*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
 =======
 /*
@@ -43,8 +41,7 @@ Route::get('yourEvent',[StaticController::class, 'yourEvent']);
 Route::get('home',[StaticController::class, 'home'] );
 Route::get('about', [StaticController::class, 'about']);
 Route::get('contact', [StaticController::class, 'contact']);
->>>>>>> 497ed25 (commit-05-April-23)
->>>>>>> f64d6a9 (commit-05-April-23)
+
 
 
 Route::get('/', function () {
