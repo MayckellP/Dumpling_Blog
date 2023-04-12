@@ -96,7 +96,7 @@
              background-color: #B9B6C0;
             }
             
-            input:focus + .general_events, 
+            input:focus + .general_events,
             input:focus + .foods,
             input:focus + .clubs,
             input:focus + .blogs {
@@ -175,7 +175,7 @@
             .cont-calendar{
                 display:flex;
                 flex-direction:column;
-                align-items:center;               
+                align-items:center;
             }
             .cont-calendar img {
                 width:35%;
@@ -205,7 +205,7 @@
                 margin-top: 2rem;
                 color:white;
                 font-weight:bold;
-            } 
+            }
             .month-name {
                 height:35%;
                 font-size:20px;
@@ -224,7 +224,7 @@
 
 
     <div class="cont-home">
-        <section class="events-group">  
+        <section class="events-group">
             <label class="switch mb-3">
               <input type="checkbox">
               <span class="general_events">
