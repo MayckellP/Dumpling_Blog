@@ -8,14 +8,19 @@
 }
 
 .container-month {
+  background-color:white;
   display:flex;
   flex-direction:row-reverse;
   align-items:center;
   justify-content:center;
   cursor: pointer;
+  gap: 14px;
   font-size: 15px;
+  height:2rem;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* Create a custom checkbox */

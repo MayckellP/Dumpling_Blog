@@ -4,4 +4,5 @@
                 {{ __('CONTACT US') }}
             </h2>
         </x-slot>
+        @include('publications.partials.searchPublication')
 </x-app-layout>

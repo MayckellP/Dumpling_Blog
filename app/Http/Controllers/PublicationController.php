@@ -7,15 +7,18 @@ use App\Models\Publication;
 use App\Models\Publication_details;
 use App\Models\Message;
 use App\Models\Like;
+use App\Models\User;
+use Illuminate\Support\Str;
 
 class PublicationController extends Controller
 {
     public function showAll(){
         $messages = Message::all()->sortByDesc('created_at');
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
+        $publications = Publication::all()->sortByDesc('created_at');
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages]);
+        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -29,30 +32,51 @@ class PublicationController extends Controller
         $publicationDetails->id = $publication->id;
         $publicationDetails->title = $request->title;
         $publicationDetails->content = $request->content;
-        $publicationDetails->image = $request->image;
         $publicationDetails->date = $request->date;
+        $publicationDetails->hour = $request->hour;
         $publicationDetails->place = $request->place;
         $publicationDetails->category = $request->category;
         $publicationDetails->id_reference_publication = $publication->id;
 
+        if($request->hasFile("image")){
+            $subNameImage = date('d-m-Y_h:i');
+            $image = $request->file("image");
+            $nameImage = Str::slug($publication->username)."_".$subNameImage.".".$image->guessExtension();
+            $routeImage = public_path("Publication_Img/post/");
+            $image->move($routeImage,$nameImage);
+            $publicationDetails->image = $nameImage;
+       }
+
         $publicationDetails->save();
 
-        return redirect('/homePage');
+        $URLDetails = "details";
+        $URL = Str::slug($URLDetails)."/".$publication->id;
+
+        return redirect($URL);
     }
     public function showOnePublication($id){
         $publications = Publication::findOrFail($id);
+
+        $id_reference = $publications->Id_Reference_User;
+        $user = User::findOrFail($id_reference); 
+
         $publicationsDetails = Publication_details::findOrFail($id);
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications]);
+        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications, 'user'=> $user]);
     }
     public function showPublicationToEdit( $id){
+        $publications = Publication::findOrFail($id);
+
+        $id_reference = $publications->Id_Reference_User;
+        $user = User::findOrFail($id_reference); 
+
         $publicationsDetails = Publication_details::findOrFail($id);
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails]);
+        ['publicationsDetails' => $publicationsDetails], ['publications' => $publications, 'user'=> $user]);
     }
     public function edit(Request $request, $id){
         $publicationsDetails = Publication_details::findOrFail($id);
