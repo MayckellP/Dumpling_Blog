@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark shadow-5-strong fixed-top">
+<nav class="navbar navbar-dark shadow-5-strong">
     <div class="container-fluid">
         {{-- From her the Login and profile header start  --}}
         <div class="dropend">

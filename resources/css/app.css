@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&family=Tilt+Prism&display=swap");
+
+.navbar {
+    background: rgba(0, 0, 0, 0.872);
+}
+.dropdown-menu a:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* this code take the dot away from the li element */
+nav ul {
+    list-style-type: none;
+}
+
+.navbar-toggler {
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link {
+    font-family: "Inria Sans", sans-serif;
+}
+
+.navtext {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+.navtext:hover {
+    text-decoration: underline;
+}
+@media (max-width: 767px) {
+    .navtext {
+        display: none;
+    }
+}
+@media (min-width: 767px) {
+    .navtextside {
+        display: none;
+        text-decoration: none;
+    }
+    .navtextside:hover {
+        text-decoration: underline;
+    }
+    .firstclass {
+        margin-top: 40%;
+    }
+}
+
+/*this is the style tag for the avatar on the navbar */
+.avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+/* extra Menu */
+.special {
+    width: 50%;
+}
