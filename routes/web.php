@@ -116,8 +116,9 @@ Route::middleware('auth')->group(function () {
 
 /*-------------------------------WITHOUT AUTH */
 
+/*-------------------------------Publication Delete */
 
-
+Route::delete('/publications/{id}', [PublicationController::class, 'delete'])->name('publications.delete');
 
 
 require __DIR__.'/auth.php';
