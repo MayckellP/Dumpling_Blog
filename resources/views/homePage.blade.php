@@ -60,6 +60,7 @@
             background-size:cover;
         }
     </style>
+    
     <div class="cont-general">
         <video src="/images/background.mp4" 
             autoplay="true" 
@@ -114,4 +115,5 @@
             </div>
         </section>
     </div>
+   
 </x-app-layout>

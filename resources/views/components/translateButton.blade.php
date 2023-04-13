@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .btn-translate {
       width:50px;
       height:50px;
@@ -16,12 +16,15 @@
         filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
     }
 </style> 
-<div class="btn-translate dropend d-flex justify-content-start  text-white m-3">
+<div class="btn-translate dropend d-flex justify-content-start text-white m-3 changeLang">
     <button type="button" class="btn-translate text-end" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="/images/translate.svg">
     </button>
     <ul class="dropdown-menu ps-3">
-      <li>German</li>
+      <li> 
+            <input id="de" type="hidden" value="de" {{ session()->get('locale') == 'en' ? 'selected' :''}}> 
+            <label for="">German</label>
+        </li>
       <li><hr class="dropdown-divider"></li>
       <li>English</li>
       <li><hr class="dropdown-divider"></li>
@@ -32,4 +35,4 @@
       <li>Ukranian</li>
       <li><hr class="dropdown-divider"></li>
     </ul>
-</div>
+</div> -->

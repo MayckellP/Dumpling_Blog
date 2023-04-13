@@ -28,7 +28,7 @@
 
             <!-- Page Content -->
             <main class="w-50 m-auto mt-5">
-            @include('components.translateButton')
+            
                 {{ $slot }}
             </main>
         </div>

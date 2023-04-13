@@ -4,12 +4,18 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LangController;
 
 /*--------------------------------------------------PUBLIC PAGES - NO AUTH*/
+Route::get('lang', [LangController::class, 'index']);
+Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');	
 
 Route::get('/', function () {
     return view('homePage');
 });
+
+
+
 Route::get('/homePage', function(){
     return view('homePage');
 })->name('homePage');
@@ -25,6 +31,10 @@ Route::get('/contactPage', function(){
 Route::get('/yourEvents', function(){
     return view('yourEvents');
 })->name('yourEvents');
+
+Route::get('/translate',function() {
+    return view('translate');
+})->name('translate');
 
 
 
