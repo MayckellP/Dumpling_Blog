@@ -180,6 +180,30 @@
             .cont-calendar img {
                 width:135%;
             }
+
+            .cont-calendar input {
+                border: none;
+                box-sizing: border-box;
+                outline: 0;
+                padding: .75rem;
+                position: relative;
+                width: 100%;
+            }
+
+            input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+}
+
             .back-calendar{
                 background-color:#D9D9D9;
                 border-radius:10%;
@@ -253,39 +277,73 @@
             </label>
         </section>
         <div class="cont-calendarFilter">
-            <div class="cont-calendar">
-                <img src="/images/Up.svg" alt="" class="mt-3">
+            <div class="cont-calendar" >
+                <!-- <img src="/images/Up.svg" alt="" class="mt-3"> -->  
                 <div class="back-calendar">
                     <button id="btn-month">
-                        
-                        <img src='/images/calendar.svg'> 
-                    </button>
-                    <form action="" class="form-start">
+
+                   
+                      
+                        <img src='/images/calendar.svg' alt="Calendar"> 
+                    </button> 
+                    <form action="/events" method="post" class="form-start">
                     
-                    <input type="date" id="month" name="month" hidden />
+                    <input type="date" id="month" name="month" onchange="getObject(this) , this.form.submit();" hidden />
                     
-                    <p>01</p>
+                    <!-- <p>01</p> -->
+                    @csrf
                     </form>
+
                     
-                    <p class="month-name">January</p>
+                    
+                    <!-- <p class="month-name">January</p> -->
                 </div>
-                <img src="/images/Down.svg" alt="" class="mt-2">
+
+                
+                <!-- <img src="/images/Down.svg" alt="" class="mt-2"> -->
             </div>
-            <a href="" class="btn-day">
+            <!-- <a href="" class="btn-day">
                 DAYS
-            </a>
+            </a> -->
         </div>
     </div>
 
     <script>
-    document.querySelector("#btn-month").onclick = () => {
+     document.querySelector("#btn-month").onclick = () => {
+      eventDate = document.getElementById("month");
+      try {
+        eventDate.showPicker();
+      } catch(error) {
+        window.alert(error);
+      }
+  };
+
+  function getObject(eventDate)
+{
+//  alert(object);
+//  console.log(object);
+  
+    console.log(eventDate.value);
+}
+  
+  /*
+  window.onload = () => {
+    const clickInput = () => {
+
+event.target.dataset.receivedAction = 'click';
+
+}
+
       const input = document.querySelector("#month");
+      input.addEventListener('click', clickInput, false);
       try {
         input.showPicker();
       } catch(error) {
         window.alert(error);
       }
-  };
+  }; 
+  */
+
 </script>
         
 </x-app-layout>

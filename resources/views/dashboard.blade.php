@@ -41,6 +41,17 @@
         </x-slot>
         @include('publications.partials.publicationDetails')
 
+
+
+    @elseif(Request::path() == "events")
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                {{ __('Events_Date') }}
+            </h2>
+        </x-slot>
+        @include('publications.partials.datePublication')
+
+
     @else
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">

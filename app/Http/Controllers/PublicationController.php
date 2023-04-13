@@ -77,4 +77,12 @@ class PublicationController extends Controller
 
         return redirect('/homePage');
     }
+    public function eventDate(Request $request){
+
+        $newDate = $request->month;
+
+        $eventDates = Publication_details::where('date', $newDate)->get();
+
+        return view('datePublication', ['eventDates' => $eventDates]);
+    }
 }

@@ -55,6 +55,7 @@ Route::get('/Pub_Events', [PublicationController::class, 'showAll'])->name('dash
 Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('dashboard');
 
 
+Route::post('/events', [PublicationController::class, 'eventDate'])->name('aboutPage');
 
 
 
