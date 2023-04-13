@@ -110,15 +110,17 @@ Route::get('/details/{id}', [PublicationController::class, 'showOnePublication']
 /*--------------------------------------------------CREATE COMMENTS */
 
 /*-------------------------------WITH AUTH */
-Route::middleware('auth')->group(function () {
+/* Route::middleware('auth')->group(function () {
     Route::post('/create_message/{id}', [MessageController::class, 'createMessage'])->name('publication.partials.publicationEdit/edit');
-});
+}); */
 
 /*-------------------------------WITHOUT AUTH */
 
 /*-------------------------------Publication Delete */
 
-Route::delete('/publications/{id}', [PublicationController::class, 'delete'])->name('publications.delete');
+/* Route::delete('/publications/{id}', [PublicationController::class, 'delete'])->name('publications.delete'); */
+
+Route::delete('/message/{id}', [PublicationController::class, 'delete']);
 
 
 require __DIR__.'/auth.php';

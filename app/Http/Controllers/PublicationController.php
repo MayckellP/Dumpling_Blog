@@ -71,7 +71,7 @@ class PublicationController extends Controller
         $like = new Like();
 
         $like->Id_Reference_Publication = $request->Id_Reference_Publication;
-        $like->id_reference_user = $request->id_reference_user;
+       /*  $like->id_reference_user = $request->id_reference_user; */
 
         $like->save();
 
@@ -84,27 +84,15 @@ class PublicationController extends Controller
 
         return view('yourEvents',['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
-
-    /* Publication Delete */
     
     public function delete($id) {
-        $publication = Publication::findOrFail($id);
-        $publicationDetails = Publication_details::where('id_reference_publication', $id)->first();
-        $messages = Message::where('id_reference_publication', $id)->get();
-        $likes = Like::where('Id_Reference_Publication', $id)->get();
-    
-        foreach ($messages as $message) {
-            $message->delete();
-        }
-    
-        foreach ($likes as $like) {
-            $like->delete();
-        }
-    
-        $publicationDetails->delete();
-        $publication->delete();
-    
-        return redirect('/homePage');
-    }
-    
+
+        $result = Publication_details::findOrFail($id)->delete();
+        $result2 = Publication::findOrFail($id)->delete();
+ 
+ 
+        // after that we redirect to the message list again  
+        return redirect('/homePage');        
+    } 
+ 
 }
