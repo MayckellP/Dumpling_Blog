@@ -84,4 +84,27 @@ class PublicationController extends Controller
 
         return view('yourEvents',['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
+
+    /* Publication Delete */
+    
+    public function delete($id) {
+        $publication = Publication::findOrFail($id);
+        $publicationDetails = Publication_details::where('id_reference_publication', $id)->first();
+        $messages = Message::where('id_reference_publication', $id)->get();
+        $likes = Like::where('Id_Reference_Publication', $id)->get();
+    
+        foreach ($messages as $message) {
+            $message->delete();
+        }
+    
+        foreach ($likes as $like) {
+            $like->delete();
+        }
+    
+        $publicationDetails->delete();
+        $publication->delete();
+    
+        return redirect('/homePage');
+    }
+    
 }
