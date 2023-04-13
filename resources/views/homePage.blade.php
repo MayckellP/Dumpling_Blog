@@ -43,7 +43,7 @@
             width: 23%;
             margin: 10px;
             padding: 0;
-
+            
         }
 
         .cont-gen {
@@ -80,6 +80,7 @@
             font-weight: bold;
         }
 
+        
     </style>
     <div class="cont-general">
         <video src="/images/background.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg">

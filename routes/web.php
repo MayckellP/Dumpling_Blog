@@ -117,4 +117,7 @@ Route::middleware('auth')->group(function () {
 /*-------------------------------WITHOUT AUTH */
 
 
+
+
+
 require __DIR__.'/auth.php';
