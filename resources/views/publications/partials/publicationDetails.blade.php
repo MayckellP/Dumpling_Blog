@@ -21,7 +21,6 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
-
                 <!-- CARD (SHOW --------------------- EVENTS GROUP) -->
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
@@ -48,8 +47,7 @@
                         <button type="button" class="btn btn-warning m-3">Edit Event</button>
                     </a>
                     @endif
-            
-                @if($likes->isEmpty())
+                            @if($likes->isEmpty())
                     <form action="/like" method="post">
                         <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                         <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
@@ -59,24 +57,17 @@
                             <label for="checklike" class="bi-heart-fill" id="heart"></label>
                         </button>
                     </form>
-
                 @else
-
-                
-                    @foreach($likes as $like)
+                                    @foreach($likes as $like)
                         @if($like->id_reference_user == Auth::user()->id && $like->Id_Reference_Publication == $publicationsDetails->id)
                             @php
                                 $validationLike++;
                             @endphp
-
                         @endif
                     @endforeach
-                
-                    @if($validationLike == 1)
+                                    @if($validationLike == 1)
                         <i class="bi bi-heart-fill text-danger" id="heart"></i>
-
                         @else
-
                             <form action="/like" method="post">
                                 <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                                 <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
@@ -86,38 +77,15 @@
                                     <label for="checklike" class="bi-heart-fill" id="heart"></label>
                                 </button>
                             </form>
-                            <form action="/delete" method="delete">
-                                <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
-                                <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
-                                <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                                @csrf
-                                <button type="submit">
-                                    <label for="checklike" class="bi-heart-fill" id="heart"></label>
-                                </button>
-                            </form>
-                    @endif
+                          @endif
+                          <form action="/message/{{$publicationsDetails->id}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit"><i class="bi bi-trash3-fill"></i>Delete</button>
+                        </form>
                 @endif
             @endauth
-            {{--  @auth
-                @if(!$publicationsDetails)
-            <form action="/delete" method="delete">
-                <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
-                <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
-                <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                @csrf
-                <button type="submit">
-                    <label for="delete" class="bi bi-trash3-fill col" id="delete"></label>
-                </button>
-            </form>
-        @endif
-    @endauth  --}}
-
-        <form action="/message/{{$publicationsDetails->id}}" method="post">
-            @csrf
-            @method('delete')
-            <button type="submit">Delete</button>
-        </form>
-        </div>
+                </div>
     </div>
     @include('publications.partials.createMessage')
 
