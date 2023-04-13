@@ -10,6 +10,8 @@ use App\Models\Like;
 use App\Models\User;
 use Illuminate\Support\Str;
 
+
+
 class PublicationController extends Controller
 {
     public function showAll(){
@@ -18,9 +20,11 @@ class PublicationController extends Controller
         $publications = Publication::all()->sortByDesc('created_at');
         $likes = Like::all();
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],
         ['messages' => $messages, 'publications' => $publications, 'likes'=>  $likes]);
+
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -66,8 +70,10 @@ class PublicationController extends Controller
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications, 'user'=> $user]);
+
     }
     public function showPublicationToEdit( $id){
         $publications = Publication::findOrFail($id);
@@ -79,8 +85,10 @@ class PublicationController extends Controller
 
         $publicationsDetails = Publication_details::findOrFail($id);
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails], ['publications' => $publications, 'user'=> $user, 'messages'=> $messages]);
+
     }
     public function edit(Request $request, $id){
         $publicationsDetails = Publication_details::findOrFail($id);
@@ -123,7 +131,6 @@ class PublicationController extends Controller
         $publications = Publication::all()->sortByDesc('created_at');
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
 
-        return view('yourEvents', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
+        return view('yourEvents',['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
     }
 }

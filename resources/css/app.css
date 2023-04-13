@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,3 +80,4 @@ nav ul {
 .dropdown-menu nav-item a:hover {
     background-color: rgba(0, 0, 0, 0);
 }
+

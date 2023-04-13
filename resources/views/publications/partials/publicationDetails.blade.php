@@ -128,7 +128,7 @@
                         <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                         <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                         <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                        @csrf 
+                        @csrf
                         <button type="submit" >
                             <label for="checklike" class="bi-heart-fill me-1" id="heart"></label>
                         </button>
@@ -138,22 +138,24 @@
                         @if($like->id_reference_user == Auth::user()->id && $like->Id_Reference_Publication == $publicationsDetails->id)
                             @php
                                 $validationLike++;
-                            @endphp            
+                            @endphp
 
                         @endif
                     @endforeach
+
                     @if($validationLike == 1)     
                         <i class="bi bi-heart-fill text-danger" id="heart"></i>      
                     @else
+
                             <form action="/like" method="post">
                                 <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                                 <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                                 <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                                @csrf 
+                                @csrf
                                 <button type="submit">
                                     <label for="checklike" class="bi-heart-fill me-1" id="heart"></label>
                                 </button>
-                            </form>  
+                            </form>
                     @endif
                 @endif
             @endauth

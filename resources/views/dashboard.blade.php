@@ -2,6 +2,7 @@
 
 <x-app-layout>
     @if(Request::path() === "General_Events")
+
         
         @include('publications.publication') 
         
@@ -19,6 +20,7 @@
     @elseif(Request::path() === "Smalls_Events")
         
         @include('publications.publication') 
+
         
         
 

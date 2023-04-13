@@ -1,5 +1,6 @@
 <x-app-layout>
     <style>
+
         @import url("https://fonts.cdnfonts.com/css/sen?styles=34225");
         .cont-home{
             height:85vh;
@@ -211,10 +212,12 @@
           z-index: 1;
         }
         .logo-back{
+
             z-index: 2;
             margin-bottom:10rem;
             width:50%;
         }
+
         #all_ok{
             display:none;
         }
@@ -427,6 +430,7 @@
             poster="https://carontestudio.com/img/contacto.jpg">
         </video>
 
+
         <!-- MAIN LOGO -->
         <img src="/images/signWithLogo.svg" alt="" class="logo-back m-auto">
 
@@ -507,12 +511,14 @@
                 </a>
             </div>
 
+
             <div class="blog_event">
                 <a href="/Smalls_Events" class="h-100 text-decoration-none">
                     <div class="card-body">
                         Blogs
                     </div>
                 </a>
+
             </div>
         </section>
     </div>
