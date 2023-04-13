@@ -1,13 +1,14 @@
 <style>
     .cont-rating{
-        width:40%;
+        width:50%;
     }
-    label {
+    .container {
      font-size:15px;
      background-color: white;
      display: flex;
+     align-items:center;
      gap: 14px;
-     padding: 10px 15px 10px 10px;
+     height:2rem;
      cursor: pointer;
      user-select: none;
      border-radius: 10px;
@@ -15,7 +16,7 @@
      color: black;
     }
 
-    input:checked + label svg {
+    input:checked + .container svg {
      fill: hsl(0deg 100% 50%);
      stroke: hsl(0deg 100% 50%);
      animation: heartButton 1s;
@@ -43,13 +44,13 @@
      }
     }
 
-    input + label .action {
+    input + .container .action {
      position: relative;
      overflow: hidden;
      display: grid;
     }
 
-    input + label .action span {
+    input + .container .action span {
      grid-column-start: 1;
      grid-column-end: 1;
      grid-row-start: 1;
@@ -57,12 +58,12 @@
      transition: all .5s;
     }
 
-    input + label .action span.option-1 {
+    input + .container .action span.option-1 {
      transform: translate(0px,0%);
      opacity: 1;
     }
 
-    input:checked + label .action span.option-1 {
+    input:checked + .container .action span.option-1 {
      transform: translate(0px,-100%);
      opacity: 0;
     }
@@ -72,7 +73,7 @@
      opacity: 0;
     }
 
-    input:checked + label .action span.option-2 {
+    input:checked + .container .action span.option-2 {
      transform: translate(0px,0%);
      opacity: 1;
     }

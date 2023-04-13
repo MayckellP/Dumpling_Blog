@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Publication;
 use App\Models\Publication_details;
 use App\Models\Message;
+use Illuminate\Support\Str;
 
 class MessageController extends Controller
 {
@@ -19,6 +20,8 @@ class MessageController extends Controller
         
 
         $message->save();
-        return redirect('homePage');
+        $URLDetails = "details";
+        $URL = Str::slug($URLDetails)."/".$id;
+        return redirect($URL);
      } 
 }

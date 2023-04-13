@@ -15,7 +15,8 @@
       </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            @include('layouts.altNavigation')
+
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -28,6 +29,7 @@
 
             <!-- Page Content -->
             <main class="w-50 m-auto mt-5">
+            @include('components.translateButton')
                 {{ $slot }}
             </main>
         </div>

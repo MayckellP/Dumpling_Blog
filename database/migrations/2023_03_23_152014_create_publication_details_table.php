@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('content');
             $table->string('image');
             $table->string('date');
+            $table->string('hour');
             $table->string('place');
             $table->integer('id_reference_publication');
             $table->timestamps();

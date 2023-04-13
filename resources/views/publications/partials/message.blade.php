@@ -1,34 +1,34 @@
 @php
     $countComment = 0;
 @endphp
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-6 text-gray-900 dark:text-gray-100">
-            <div class="cont-comments py-4">
-                <ul>
-                    @foreach ($messages as $message)
-                        @if($publicationsDetails->id_reference_publication == $message->Id_Reference_Publication)
-                        @php
-                            $countComment++;
-                        @endphp
-                            <li>
-                                <div class="list-comment">
-                                    <i class="bi bi-person-badge"></i>
-                                    <div class="body-comment">
-                                        <div class="cont-name-hour">
-                                            <h4>{{$message->username}}</h4>
-                                            <p><i>{{$message->created_at->diffForHumans()}}.</i></p>
-                                        </div>
-                                        <p class="comment-text py-3">
-                                        {{$message->content}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        @endif
-                    @endforeach
-                </ul>
+<style>
+    .background{
+        background-color:#EAEAEA;
+        width:96%;
+    }
+    .bg-message{
+        background-color:#D9D9D9;
+    }
+</style>
+<div class="background mt-2 py-1 m-auto">
+    @foreach ($messages as $message)
+        @if($publicationsDetails->id_reference_publication == $message->Id_Reference_Publication)
+            @php
+                $countComment++;
+            @endphp
+            <div class="d-flex w-90 align-items-start mt-4 px-2" >     
+                <div class="cont-imgProfile">
+                    <img src="/DB_Img/post/{{Auth::user()->foto}}" alt="">
+                </div>
+                <div class="ms-2 w-100">
+                    <div class="bg-message rounded-3 pt-2" style="width:95%;">
+                        <h5 class="ms-2 mb-0 fw-bold">{{Auth::user()->name}}</h5>
+                        <input class="bg-message border-none ps-2 fs-6 w-100" disabled type="text" value="{{$message->content}}"><br>
+                    </div>
+                    <i style="font-size:12px;">{{$message->created_at->diffForHumans()}}</i>
+                </div>
             </div>
-        </div>
-    </div>
-    </div>
+        @endif
+    @endforeach
+</div>
+
