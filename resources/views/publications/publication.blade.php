@@ -1,3 +1,10 @@
+@php
+  $countComment = 0;
+  $countLike = 0;
+  $validationLike = 0;
+@endphp
+
+
 <style>
     @import url('https://fonts.cdnfonts.com/css/sen?styles=34225');
     .eventPage{
@@ -54,6 +61,20 @@
     <div class="px-2">
         @foreach($publicationsDetails as $publicationsDetail)
             @if($publicationsDetail->category === Request::path() )
+                @foreach ($messages as $message)
+                    @if($publicationsDetail->id_reference_publication == $message->Id_Reference_Publication)
+                        @php
+                          $countComment++;
+                        @endphp
+                    @endif
+                @endforeach
+                @foreach ($likes as $like)
+                    @if($publicationsDetail->id_reference_publication == $like->Id_Reference_Publication)
+                        @php
+                          $countLike++;
+                        @endphp
+                    @endif
+                @endforeach
                     <div class="cont-card d-flex w-100 mb-3">
                         <div class="cont-left">
                             <h3 class="fs-5 text-center m-auto" style="height:2rem">
@@ -71,9 +92,13 @@
                         <div class="cont-right ps-2">
                             <div class="header-card w-75 text-start">
                                 <i class="bi bi-heart-fill text-danger me-1"></i>
-                                    5
+                                    {{$countLike}}
                                 <i class="bi bi-chat-left-text ms-3 me-1"></i>
-                                    10
+                                    {{$countComment}}
+                                    @php
+                                      $countComment = 0;
+                                      $countLike = 0;
+                                    @endphp
                             </div>
                             <div class="info-card">
                                 @foreach($publications as $publication)

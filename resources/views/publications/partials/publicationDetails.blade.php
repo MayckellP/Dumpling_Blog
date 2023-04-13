@@ -67,6 +67,12 @@
     .option-event ul{
         background-color:rgba(255, 255, 255, 0.85);
     }
+    .option-event img:hover{
+        cursor:pointer;
+    }
+    .dropdown-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.0);
+}
 </style>
 
 <div class="cont-publication m-2 p-2">
@@ -78,7 +84,7 @@
         <small><i class="text-body-secondary">{{$user->email}}</i></small>
         @auth
             @if($publications->Id_Reference_User == Auth::user()->id)
-                <div class="option-event dropend d-flex justify-content-start text-white m-3 ">
+                <div class="option-event dropend d-flex justify-content-start text-white m-3">
                         <img src="/images/Option_Event.png" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu ps-3">
                         <li class="mb-2">
@@ -99,10 +105,15 @@
     <div class="detailsEvent w-100">
         <h2>{{$publicationsDetails->title}}</h2>
         <p class="mb-0">{{$publicationsDetails->content}}</p>
-        <div class="time-publi w-100 text-end">
-            <small class="">
-                <i class="bi bi-calendar text-white me-4"> {{$publicationsDetails->date}}</i>
-                <i class="bi bi-clock-fill text-white"> {{$publicationsDetails->hour}}</i>
+        <div class="time-publi w-100 text-end mt-2">
+            <small class="d-flex justify-content-between">
+                <div>
+                <i class="bi bi-geo-fill text-white px-4 py-2 bg-dark rounded-3 fw-bold"> {{$publicationsDetails->place}}</i>
+                </div>
+                <div class="w-50">
+                    <i class="bi bi-calendar text-white me-4 fw-bold"> {{$publicationsDetails->date}}</i>
+                    <i class="bi bi-clock-fill text-white p-2 bg-dark rounded-3 fw-bold"> {{$publicationsDetails->hour}}</i>
+                </div>
             </small>
         </div>
     </div>

@@ -1,5 +1,6 @@
 <x-app-layout>
     <style>
+        @import url("https://fonts.cdnfonts.com/css/sen?styles=34225");
         .cont-home{
             height:85vh;
             display:flex;

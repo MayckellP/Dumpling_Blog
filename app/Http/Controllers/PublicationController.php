@@ -16,9 +16,11 @@ class PublicationController extends Controller
         $messages = Message::all()->sortByDesc('created_at');
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
         $publications = Publication::all()->sortByDesc('created_at');
+        $likes = Like::all();
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
+        ['publicationsDetails' => $publicationsDetails],
+        ['messages' => $messages, 'publications' => $publications, 'likes'=>  $likes]);
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -73,19 +75,33 @@ class PublicationController extends Controller
         $id_reference = $publications->Id_Reference_User;
         $user = User::findOrFail($id_reference); 
 
+        $messages = Message::all()->sortByDesc('created_at');
+
         $publicationsDetails = Publication_details::findOrFail($id);
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails], ['publications' => $publications, 'user'=> $user]);
+        ['publicationsDetails' => $publicationsDetails], ['publications' => $publications, 'user'=> $user, 'messages'=> $messages]);
     }
     public function edit(Request $request, $id){
         $publicationsDetails = Publication_details::findOrFail($id);
+        $publication = Publication::findOrFail($id);
 
         $publicationsDetails->title = $request->title;
+        $publicationsDetails->category = $request->category;
         $publicationsDetails->content = $request->content;
-        $publicationsDetails->image = $request->image;
-        $publicationsDetails->date = $request->date;
         $publicationsDetails->place = $request->place;
+        $publicationsDetails->date = $request->date;
+        $publicationsDetails->hour = $request->hour;
+
+        if($request->hasFile("image")){
+            $subNameImage = date('d-m-Y_h:i');
+            $image = $request->file("image");
+            $nameImage = Str::slug($publication->username)."_".$subNameImage.".".$image->guessExtension();
+            $routeImage = public_path("Publication_Img/post/");
+            $image->move($routeImage,$nameImage);
+            $publicationsDetails->image = $nameImage;
+       }
+        
 
         $publicationsDetails->save();
 
