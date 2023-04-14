@@ -1,15 +1,6 @@
 @php
     $countComment = 0;
 @endphp
-<style>
-    .background{
-        background-color:#EAEAEA;
-        width:96%;
-    }
-    .bg-message{
-        background-color:#D9D9D9;
-    }
-</style>
 <div class="background mt-2 py-1 m-auto">
     @foreach ($messages as $message)
         @if($publicationsDetails->id_reference_publication == $message->Id_Reference_Publication)

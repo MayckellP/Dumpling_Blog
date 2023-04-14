@@ -20,61 +20,6 @@
 
 @include('components.headerEvents')
 
-<style>
-    @import url('https://fonts.cdnfonts.com/css/sen?styles=34225');
-    .cont-publication{
-        background-color:rgba(4, 151, 201, 0.5);
-        border-radius:10px;
-        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
-    }
-    .cont-imgProfile{
-        width:10%;
-    }
-    .cont-imgProfile img{
-        border-radius:50%;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-    }
-    .user-publi{
-        font-family: 'Sen', sans-serif;
-        margin:0px 5px 0px 5px;
-        color:white;
-    }
-    .topEvent small{
-        margin-left:0.5rem;
-        font-size:10px;
-    }
-    .detailsEvent h2{
-        font-family: 'Sen', sans-serif;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    }
-    .imageEvent{
-        background-color:black;
-    }
-    .imageEvent img{
-        width:75%;
-        margin:auto;
-    }
-    .likesEvent i, .likesEvent small, .likesEvent label {
-        font-size:18px;
-    }
-    .option-event{
-        position:absolute;
-        right:1rem;
-    }
-    .option-event img{
-        width:100%;
-    }
-    .option-event ul{
-        background-color:rgba(255, 255, 255, 0.85);
-    }
-    .option-event img:hover{
-        cursor:pointer;
-    }
-    .dropdown-menu a:hover {
-    background-color: rgba(0, 0, 0, 0.0);
-}
-</style>
-
 <div class="cont-publication m-2 p-2">
     <div class="topEvent d-flex align-items-center mb-2">
         <div class="cont-imgProfile">
@@ -169,7 +114,7 @@
         </div>
     </div>
 </div>
-    @include('publications.partials.createMessage')
+@include('publications.partials.createMessage')
 
-    @include('publications.partials.message')
+@include('publications.partials.message')
 

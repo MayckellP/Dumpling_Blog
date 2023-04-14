@@ -1,0 +1,294 @@
+/** ----------------------------------------------------------------------START: HEADER NAVBAR  */
+
+.cont-header {
+    background-color: white;
+    width: 98%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.button_back {
+    width: 12%;
+    cursor: pointer;
+}
+.button_back img {
+    width: 100%;
+}
+.logo_center {
+    width: 40%;
+}
+.button_back img {
+    width: 100%;
+}
+.cont_translate {
+    width: 18%;
+}
+
+/** ----------------------------------------------------------------------END: HEADER NAVBAR  */
+
+/** ----------------------------------------------------------------------START: TRANSLATE  */
+
+.btn-translate {
+    width: 60%;
+    z-index: 2;
+}
+.btn-translate img {
+    width: 100%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+.dropdown-menu {
+    background-color: rgba(54, 130, 165, 0.75);
+    color: white;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/** ----------------------------------------------------------------------END: TRANSLATE  */
+
+/** ----------------------------------------------------------------------START: FILTER  */
+
+.cont-filter {
+    padding-top: 1rem;
+    width: 100%;
+    background-color: #f8f5f5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.accordion {
+    width: 99%;
+    max-width: 1000px;
+    margin: auto;
+}
+.accordion-item {
+    background-color: #fff;
+    color: #111;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+.accordion-item-header.active::after {
+    content: "\2212";
+}
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.accordion-item-body-content {
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+/*? ------------------------------------INPUT: DATE  */
+
+.date {
+    border-radius: 5px;
+    width: 60%;
+    height: 2rem;
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/*? ------------------------------------CHECKBOX: "ALL MONTH"  */
+
+.cont-allMonth {
+    width: 35%;
+    padding: 0;
+}
+.container-month input {
+    display: none;
+}
+
+.container-month {
+    background-color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 14px;
+    font-size: 15px;
+    height: 2rem;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    background-color: #2196f300;
+    border-radius: 0.25em;
+    transition: all 0.25s;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-month input:checked ~ .checkmark {
+    background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    transform: rotate(0deg);
+    border: 0.1em solid black;
+    left: 0;
+    top: 0;
+    width: 1.05em;
+    height: 1.05em;
+    border-radius: 0.25em;
+    transition: all 0.25s, border-width 0.1s;
+}
+
+/* Show the checkmark when checked */
+.container-month input:checked ~ .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border-color: #fff0 white white #fff0;
+    border-width: 0 0.15em 0.15em 0;
+    border-radius: 0em;
+    transform: rotate(45deg);
+}
+
+/*? ------------------------------------INPUT: SEARCH  */
+
+.cont-search {
+    height: 2rem;
+    display: flex;
+}
+.form-control {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.cont-search .btn {
+    background-color: #64cff0;
+    color: black;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    border: none;
+}
+
+/*? ------------------------------------CHECKBOX: "MOST POPULAR"  */
+
+.cont-rating {
+    width: 45%;
+}
+.container {
+    font-size: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 2rem;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: black;
+}
+
+input:checked + .container svg {
+    fill: hsl(0deg 100% 50%);
+    stroke: hsl(0deg 100% 50%);
+    animation: heartButton 1s;
+}
+
+@keyframes heartButton {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+input + .container .action {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+}
+
+input + .container .action span {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    transition: all 0.5s;
+}
+
+input + .container .action span.option-1 {
+    transform: translate(0px, 0%);
+    opacity: 1;
+}
+
+input:checked + .container .action span.option-1 {
+    transform: translate(0px, -100%);
+    opacity: 0;
+}
+
+input + label .action span.option-2 {
+    transform: translate(0px, 100%);
+    opacity: 0;
+}
+
+input:checked + .container .action span.option-2 {
+    transform: translate(0px, 0%);
+    opacity: 1;
+}
+
+/*? ------------------------------------BUTTON: "SEND SEARCH"  */
+
+.filter-btn {
+    height: 2rem;
+    background-color: #0497c9;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/** ----------------------------------------------------------------------END: FILTER  */

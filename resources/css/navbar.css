@@ -1,0 +1,78 @@
+@import url("https://fonts.cdnfonts.com/css/sen?styles=34225");
+
+/** --------------------------------------------------------------------NAVBAR  */
+.navbar {
+    background: rgba(0, 0, 0, 0.872);
+}
+.dropdown-menu a:hover {
+    background: rgba(0, 0, 0, 0.794);
+}
+
+/* this code take the dot away from the li element */
+nav ul {
+    list-style-type: none;
+}
+
+.navbar-toggler {
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link {
+    font-family: "Sen", sans-serif;
+}
+.nav-item form button {
+    font-family: "Sen", sans-serif;
+}
+
+.navtext {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Sen", sans-serif;
+}
+.navtext a {
+    color: white;
+    text-decoration: none;
+}
+.navtext a:hover {
+    color: rgb(0, 179, 255);
+}
+@media (max-width: 900px) {
+    .navtext a {
+        display: none;
+    }
+    #offcanvasDarkNavbar {
+        width: 75%;
+    }
+}
+@media (min-width: 450px) {
+    .navtextside {
+        display: none;
+        text-decoration: none;
+    }
+    .navtextside:hover {
+        text-decoration: underline;
+    }
+    .firstclass {
+        margin-top: 2rem;
+    }
+    #offcanvasDarkNavbar {
+        width: 25%;
+    }
+}
+
+/*this is the style tag for the avatar on the navbar */
+.avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+/* extra Menu */
+.special {
+    width: 100%;
+    height: 100%;
+}
+.dropdown-menu nav-item a:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+/** --------------------------------------------------------------------------END NAVBAR  */

@@ -1,46 +1,6 @@
 <x-app-layout>
 
   @include('components.headerEvents')
-  <style>
-    @import url('https://fonts.cdnfonts.com/css/sen?styles=34225');
-    .cont-formular{
-      background-color:rgba(4, 151, 201, 0.5);
-      padding:0.5rem;
-    }
-    .title-form{
-      font-family: 'Sen', sans-serif;
-      width:75%;
-      margin:auto;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-      font-weight:bold;
-      margin-top:1.5rem;
-      margin-bottom:1.5rem;
-      font-size:22px;
-      text-align:center;
-    }
-    .form-multimedia {
-      border-radius: 12px;
-      width: 35%;
-      display: flex;
-      justify-content: space-between;
-      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
-      background-color:white;
-    }
-    .label-multi {
-      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-      width: 100%;
-    }
-    .label-image {
-      font-size: 40px;
-      align-self: center;
-      margin-right: 1rem;
-    }
-    .form-multimedia input {
-      width: 100%;
-      z-index: 1;
-      display: none;
-    }
-  </style>
 
   <div class="cont-formular">
     <h2 class="title-form text-white">YOUR NEW EVENT WILL BE SOON READY!</h2>
