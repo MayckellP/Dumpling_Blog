@@ -1,5 +1,5 @@
-var content = document.getElementById("cont-calendar");
-var link = document.getElementById("link-calendar");
+var content = document.getElementById("back-calendar");
+var link = document.getElementById("btn-month");
 var allOk = document.getElementById("all_ok");
 
 function like() {
@@ -15,10 +15,6 @@ function like() {
 }
 
 function dislike() {}
-
-var content = document.getElementById("cont-calendar");
-var link = document.getElementById("link-calendar");
-var allOk = document.getElementById("all_ok");
 
 function animation() {
     content.className = "hidden";
@@ -115,7 +111,3 @@ document.querySelector("#btn-month").onclick = () => {
         window.alert(error);
     }
 };
-
-function getObject(eventDate) {
-    console.log(eventDate.value);
-}
