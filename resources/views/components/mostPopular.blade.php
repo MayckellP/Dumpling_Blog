@@ -1,6 +1,6 @@
 <style>
     .cont-rating{
-        width:50%;
+        width:45%;
     }
     .container {
      font-size:15px;

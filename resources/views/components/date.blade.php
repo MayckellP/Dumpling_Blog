@@ -8,4 +8,4 @@
     }
 </style>
 
-    <input type="date" id="date" class="date">
+    <input type="date" id="dateInput" class="date">
