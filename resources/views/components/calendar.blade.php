@@ -8,6 +8,7 @@
             	<input type="date" id="month" name="month" onchange="getObject(this) , this.form.submit();" hidden />
             @csrf
             </form>
+            <img src="/images/Calendar_2.png" alt="" id="all_ok">
     	</div>
     </div>
 </div>
