@@ -69,6 +69,14 @@ class PublicationController extends Controller
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications, 'user'=> $user]);
     }
+    public function eventDate(Request $request){
+
+        $newDate = $request->month;
+    
+        $eventDates = Publication_details::where('date', $newDate)->get();
+    
+        return view('datePublication', ['eventDates' => $eventDates]);
+    }
     public function showPublicationToEdit( $id){
         $publications = Publication::findOrFail($id);
 

@@ -15,20 +15,17 @@
         <!-- CALENDAR  -->
         <div class="cont-sections">
             <div class="cont-calendarFilter">
-                <div class="cont-calendar" id="cont-calendar">
-                    <img src="/images/Up.svg" alt="" class="mb-2">
-                    <div class="back-calendar">
-                        <form action="" class="form-start">
-                            <p>01</p>
+            	<div class="cont-calendar" >
+            		<div class="back-calendar">
+            			<button id="btn-month">
+            				<img src='/images/calendar.svg' alt="Calendar"> 
+            			</button> 
+                        <form action="/events" method="post" class="form-start">
+                        	<input type="date" id="month" name="month" onchange="getObject(this) , this.form.submit();" hidden />
+                        @csrf
                         </form>
-                        <p class="month-name">January</p>
-                    </div>
-                    <img src="/images/Down.svg" alt="" class="mt-3">
-                </div>
-                <a href="" class="btn-day" id="link-calendar">
-                    DAYS
-                </a>
-                <img src="/images/Calendar_2.png" alt="" id="all_ok">
+            		</div>
+            	</div>
             </div>
 
             <!-- EVENTS SECTION MOBILE -->

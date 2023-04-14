@@ -102,3 +102,16 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
         }
     });
 });
+
+document.querySelector("#btn-month").onclick = () => {
+    eventDate = document.getElementById("month");
+    try {
+        eventDate.showPicker();
+    } catch (error) {
+        window.alert(error);
+    }
+};
+
+function getObject(eventDate) {
+    console.log(eventDate.value);
+}
