@@ -292,3 +292,66 @@ input:checked + .container .action span.option-2 {
 }
 
 /** ----------------------------------------------------------------------END: FILTER  */
+
+/** ----------------------------------------------------------------------START: CALENDAR  */
+
+.cont-calendarFilter {
+    width: 50%;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#cont-calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cont-calendar img {
+    width: 100%;
+}
+.back-calendar {
+    background-color: #d9d9d9;
+    border-radius: 10%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 6px 0px;
+}
+.form-start {
+    width: 65%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-calendar {
+    width: 45%;
+    background-color: #0497c9;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+/** ----------------------------------------------------------------------END: CALENDAR  */

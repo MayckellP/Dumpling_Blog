@@ -1,3 +1,7 @@
+var content = document.getElementById("cont-calendar");
+var link = document.getElementById("link-calendar");
+var allOk = document.getElementById("all_ok");
+
 function like() {
     var like = document.getElementById("checklike");
     var likeValue = document.getElementById("checkValue").value;

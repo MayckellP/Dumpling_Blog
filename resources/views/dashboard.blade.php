@@ -19,6 +19,10 @@
     @elseif(Request::path() === "Smalls_Events")
         
         @include('publications.publication') 
+
+    @elseif(Request::path() === "events")
+    
+    @include('publications.publication') 
         
         
 
