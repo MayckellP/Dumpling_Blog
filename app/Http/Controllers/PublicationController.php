@@ -9,14 +9,17 @@ use App\Models\Message;
 use App\Models\Like;
 use App\Models\User;
 use Illuminate\Support\Str;
+use DateTime;
 
 class PublicationController extends Controller
 {
     public function showAll(){
-        $messages = Message::all()->sortByDesc('created_at');
+        session_start();
+
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
         $publications = Publication::all()->sortByDesc('created_at');
         $likes = Like::all();
+        $messages = Message::all();
 
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],
@@ -133,5 +136,62 @@ class PublicationController extends Controller
 
         return view('yourEvents', 
         ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
+    }
+    public function filter(Request $request){
+        session_start();
+        $dateNew = $request->dateFilter;
+        $event = $request->url;
+        $checkAllMonth = $request->checkMonth;
+        $mostPopular = $request->mostPopular;
+    
+        $publications = Publication::all()->sortByDesc('created_at');
+        $likes = Like::all();
+        $messages = Message::all();
+
+        if($checkAllMonth == 1){
+
+            $dateNew = DateTime::createFromFormat('Y-m-d', $dateNew);
+            $formatDateNew = $dateNew->format('m');
+
+            if($mostPopular == 1){
+
+                $filtersDate = Publication_details::whereMonth(
+                    'date', $formatDateNew 
+                )->get();
+
+            } else{
+
+                $filtersDate = Publication_details::whereMonth(
+                    'date', $formatDateNew
+                )->get();
+
+            }
+
+        }else{
+
+            if($mostPopular == 1){
+
+                $filtersDate = Publication_details::where([
+                    ['date', $dateNew],
+                    ['category', $event]
+                ])->get();          //DEBO AGREGAR ORDEN CON MOST POPULAR
+
+            } else {
+
+                $filtersDate = Publication_details::where([
+                    ['date', $dateNew],
+                    ['category', $event]
+                ])->get();
+
+            }
+    }
+
+    
+        return view('dashboard', 
+        ['filtersDate' => $filtersDate],
+        ['messages' => $messages, 
+        'publications' => $publications, 
+        'likes'=>  $likes, 
+        'event'=>$event]);
     }
 }

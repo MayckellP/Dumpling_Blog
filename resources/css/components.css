@@ -99,7 +99,7 @@
 
 /*? ------------------------------------INPUT: DATE  */
 
-.date {
+.datum {
     border-radius: 5px;
     width: 60%;
     height: 2rem;
@@ -304,7 +304,7 @@ input:checked + .container .action span.option-2 {
     align-items: center;
     z-index: 2;
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
+#month::-webkit-calendar-picker-indicator {
     background: transparent;
     color: transparent;
     cursor: pointer;

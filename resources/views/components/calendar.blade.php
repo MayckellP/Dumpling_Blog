@@ -11,4 +11,3 @@
     </div>
     <img src="/images/Calendar_2.png" alt="" id="all_ok">
 </div>
-

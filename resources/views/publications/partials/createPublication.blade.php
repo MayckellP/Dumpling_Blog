@@ -29,6 +29,7 @@
       <div class="d-flex justify-content-between mb-3">
         <div class="form-floating w-50">
           <input type="date" class="form-control" id="date" name="date">
+          <input type="month" class="form-control" id="dateMonth" name="date" hidden>
           <label for="date">Date</label>
         </div>
         <div class="form-floating" style="width:45%;">

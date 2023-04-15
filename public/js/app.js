@@ -78,11 +78,11 @@ function changeDate() {
     var dateInput = document.getElementById("dateInput");
 
     if (checkMonth.checked) {
-        dateInput.type = "month";
-        console.log("first");
+        //dateInput.type = "month";
+        checkMonth.value = 1;
     } else if (!checkMonth.checked) {
-        dateInput.type = "date";
-        console.log("two");
+        //dateInput.type = "date";
+        checkMonth.value = 0;
     }
 }
 
@@ -111,3 +111,6 @@ document.querySelector("#btn-month").onclick = () => {
         window.alert(error);
     }
 };
+function getObject(eventDate) {
+    console.log(eventDate.value);
+}

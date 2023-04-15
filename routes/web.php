@@ -61,6 +61,8 @@ Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('d
 
 Route::post('/events', [PublicationController::class, 'eventDate']);
 
+Route::get('/filter', [PublicationController::class, 'filter'])->name('publications.partials.publicationDetails');
+
 
 /*--------------------------------------------------TO CREATE EVENTS - JUST WITH AUTH */
 Route::get('/create', function () {
