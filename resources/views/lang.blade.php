@@ -25,8 +25,8 @@
       width:100%;
     }
     .changeLang{
-      color:black;
-      background-Color:#e5efe6;
+      color:white;
+      background-Color:rgba(54, 130, 165, 0.75);
       background-image: url(/images/translate.svg);
       filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
       width: 120px;
