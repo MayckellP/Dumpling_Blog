@@ -26,7 +26,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.altNavigation')
+                @include('layouts.altNavigation')
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -39,7 +39,11 @@
 
             <!-- Page Content -->
             <main>
-            
+                @if(Request::path() ==! "login" || Request::path() ==! "register")
+                    @include('components.translateButton')
+                @elseif(Request::path() === "login" || Request::path() === "register")
+                    <img src="images/justDumplingLogo.svg" class="mb-4" alt="">
+                @endif
                 {{ $slot }}
             </main>
         </div>

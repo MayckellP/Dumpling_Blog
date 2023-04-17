@@ -22,11 +22,9 @@ Route::get('/contactPage', function(){
     return view('contactPage');
 })->name('contactPage');
 
-Route::get('/yourEvents', function(){
-    return view('yourEvents');
-})->name('yourEvents');
 
-
+/*--------------------------------------------------YOUR EVENTS - JUST WITH AUTH */
+Route::get('/yourEvents', [PublicationController::class, 'showAll'])->name('yourEvents');
 
 
 
@@ -49,7 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Food_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Pub_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('dashboard');
-    Route::get('/yourEvents', [PublicationController::class, 'showYourEvents'])->name('yourEvents');
+    Route::get('/yourEvents', [PublicationController::class, 'showAll'])->name('dashboard');
 });
 
 /*-------------------------------WITHOUT AUTH */
@@ -115,6 +113,9 @@ Route::middleware('auth')->group(function () {
 }); 
 
 /*-------------------------------WITHOUT AUTH */
+
+Route::post('/create_message/{id}', [MessageController::class, 'createMessage'])->name('publication.partials.publicationEdit/edit');
+
 
 
 require __DIR__.'/auth.php';

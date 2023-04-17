@@ -42,7 +42,7 @@
             </div>
         </div>
         @if(Request::path() !== "homePage" )
-            <div class="navtext w-50 d-flex justify-content-around">
+            <div class="navtext d-flex justify-content-around">
                 <a class="fw-bold fs-3" href="/General_Events">GENERAL EVENTS</a>
                 <a class="fw-bold fs-3" href="Food_Events">EAT & DRINK</a>
                 <a class="fw-bold fs-3" href="Pub_Events">CLUBs</a>
@@ -71,6 +71,14 @@
                           <li><a class="dropdown-item text-white ms-3 fs-5 p-0 fw-bold" href="/Smalls_Events">Blog</a></li>
                         </ul>
                       </li>
+                    @auth
+                        <li class="nav-item firstclass">
+                            <a class="nav-link active text-white col ms-2 fs-4 d-flex align-items-center" aria-current="page" href="/yourEvents"><i class="bi bi-journal-bookmark-fill fs-2 me-3"></i>YOUR EVENTS</a>
+                        </li>
+                        <li>
+                            <hr class="border-2">
+                        </li>
+                    @endauth
                     <li class="nav-item firstclass">
                         <a class="nav-link active text-white col ms-2 fs-4 d-flex align-items-center" aria-current="page" href="{{ url('/homePage') }}"><i class="bi bi-house listicons fs-2 me-3"></i>HOME</a>
                     </li>

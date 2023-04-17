@@ -21,20 +21,20 @@
            </div>
         @else
             @foreach($filtersDate as $filterDate)
-                    @foreach ($messages as $message)
-                @if($filterDate->id_reference_publication == $message->Id_Reference_Publication)
-                    @php
-                      $countComment++;
-                    @endphp
-                @endif
-            @endforeach
-            @foreach ($likes as $like)
-                @if($filterDate->id_reference_publication == $like->Id_Reference_Publication)
-                    @php
-                      $countLike++;
-                    @endphp
-                @endif
-            @endforeach
+                @foreach ($messages as $message)
+                    @if($filterDate->id_reference_publication == $message->Id_Reference_Publication)
+                        @php
+                            $countComment++;
+                        @endphp
+                    @endif
+                @endforeach
+                @foreach ($likes as $like)
+                    @if($filterDate->id_reference_publication == $like->Id_Reference_Publication)
+                        @php
+                            $countLike++;
+                        @endphp
+                    @endif
+                @endforeach
                 <div class="cont-card d-flex w-100 mb-3">
                     <div class="cont-left">
                         <h3 class="fs-5 text-center m-auto" style="height:2rem">

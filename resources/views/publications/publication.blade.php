@@ -4,12 +4,15 @@
   $validationLike = 0;
 @endphp
 
-<div class="eventPage">
+
+<div class="eventPage w-100">
+
+    <!-- DESIGN MOBILE VERSION -->
     @include('publications.partials.searchPublication')
 
     <div class="px-2">
         @foreach($publicationsDetails as $publicationsDetail)
-            @if($publicationsDetail->category === Request::path() )
+            @if($publicationsDetail->category === Request::path())
                 @foreach ($messages as $message)
                     @if($publicationsDetail->id_reference_publication == $message->Id_Reference_Publication)
                         @php
@@ -24,53 +27,15 @@
                         @endphp
                     @endif
                 @endforeach
-                    <div class="cont-card d-flex w-100 mb-3">
-                        <div class="cont-left">
-                            <h3 class="fs-5 text-center m-auto" style="height:2rem">
-                                {{$publicationsDetail->title}}
-                            </h3>
-                            <div class="imgEvent w-100">
-                                @if($publicationsDetail == NULL)
-                                    <img class="w-100" style="height:2em; border-radius: 10px 0px 00px 10px;" src="/images/Show_Foto.png"  alt="...">
-                                @else
-                                    <img class="w-100" style="height:9em; border-radius: 10px 0px 00px 10px;" src="/Publication_Img/post/{{$publicationsDetail->image}}"  alt="...">
-                                @endif
-                            </div>
+                @if($publicationsDetail->category !== "Smalls_Events")
 
-                        </div>
-                        <div class="cont-right ps-2">
-                            <div class="header-card w-75 text-start">
-                                <i class="bi bi-heart-fill text-danger me-1"></i>
-                                    {{$countLike}}
-                                <i class="bi bi-chat-left-text ms-3 me-1"></i>
-                                    {{$countComment}}
-                                    @php
-                                      $countComment = 0;
-                                      $countLike = 0;
-                                    @endphp
-                            </div>
-                            <div class="info-card">
-                                @foreach($publications as $publication)
-                                    @if($publication->id === $publicationsDetail->id_reference_publication )
-                                        <h3 class="user-card fs-4">{{$publication->username}}</h3>
-                                    @endif
-                                @endforeach
-                                <i class="bi bi-calendar text-white"> {{$publicationsDetail->date}}</i><br>
-                                <i class="bi bi-clock-fill text-white"> {{$publicationsDetail->hour}}</i><br>
-                            </div>
-                            <div class="infoCard w-100 text-center mt-1">
-                                <a href="/details/{{$publicationsDetail->id}}" class="btn-more">
-                                    More information  
-                                    <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
-                            <div class="created mt-1 text-end me-2">
-                                <small class="text-body-secondary">
-                                    <i>{{$publicationsDetail->created_at->diffForHumans()}}</i>
-                                </small>
-                            </div>
-                        </div>
-                    </div>
+                    @include('components.cardEvents')
+
+                @elseif($publicationsDetail->category === "Smalls_Events")
+
+                    @include('components.cardBlog')
+
+                @endif
             @endif
         @endforeach
     </div>
@@ -80,4 +45,50 @@
             <img src="images/Button_NewEvent.png" alt="">
         </a>
     @endauth
+
+    <!-- DESIGN DESKTOP VERSION -->
+    <div class="calendar-left mt-2">
+
+    </div>
+    <div class="event-center mt-2">
+        <div class="logo-event w-50 m-auto mb-5">
+            <img src="images/signWithLogo.svg" alt="" class="w-75">
+        </div>
+        <div class="eventCard-pc d-flex flex-column align-items-center p-3">
+            <h3 class="titleEvent-pc text-center">IBIZA NIGHT @ HIVE ZÜRICH</h3>
+            <div class="infoEvent-pc d-flex ">
+                <img src="images/events.jpg" alt="" class="w-25">
+                <div class="detailsEvent-card ps-3 w-25">
+                    <i class="bi bi-calendar fw-bold"> 12-05-2023</i><br>
+                    <i class="bi bi-clock-fill fw-bold"> 21:00</i><br>
+                    <i class="bi bi-geo-fill fw-bold"> Zürich</i><br>
+                    <i class="bi bi-geo-fill fw-bold"> Enlace de Pagina Web</i>
+                </div>
+                <textarea id="" cols="25" rows="5" class="textarea-content w-50">Event Description Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="filter-right mt-2 d-flex justify-content-center">
+        <div class="filter-pc w-75 d-flex flex-column justify-content-center">
+            <div class="allMonth-pc w-100 mb-3">
+                @include('components.allMonth')
+            </div>
+            <div class="mostPopular-pc w-100 mb-3">
+                @include('components.mostPopular')
+            </div>
+            <div class="search-pc w-100 mb-3">
+                @include('components.search')
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+

@@ -14,33 +14,41 @@
           <input type="text" class="form-control" id="title" placeholder="Title here" name="title">
           <label for="title">Title</label>
         </div>
-        <select class="form-select" style="width:45%;" aria-label="Default select example" name="category">
-          <option value="General_Events">General Event</option>
-          <option value="Food_Events">Restaurant Event</option>
-          <option value="Pub_Events">Pub Event</option>
-          <option value="Smalls_Events">Blog</option>
-          <option selected disabled>Category</option>
-        </select>
+        <div style="width:45%">
+          <select class="form-select" id="selectForm" style="width:100%; height:50%;" aria-label="Default select example" name="category">
+            <option value="General_Events">General Event</option>
+            <option value="Food_Events">Restaurant Event</option>
+            <option value="Pub_Events">Pub Event</option>
+            <option selected disabled>Category</option>
+          </select>
+          <label class="material-checkbox mt-2">
+            <input type="checkbox" name="category" onclick="changeFormBlog()" value="Smalls_Events" id="category-blog">
+            <span class="checkmarks"></span>
+            Es un Blog?
+          </label>
+        </div>
       </div>
       <div class="form-floating mb-2">
         <textarea class="form-control" id="content" placeholder="Content here" name="content"></textarea>
         <label for="content">Content</label>
       </div>
-      <div class="d-flex justify-content-between mb-3">
-        <div class="form-floating w-50">
-          <input type="date" class="form-control" id="date" name="date">
-          <input type="month" class="form-control" id="dateMonth" name="date" hidden>
-          <label for="date">Date</label>
+      <div id="blogNone">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="form-floating w-50">
+            <input type="date" class="form-control" id="date" name="date">
+            <label for="date">Date</label>
+          </div>
+          <div class="form-floating" style="width:45%;">
+            <input type="time" class="form-control" id="hour" name="hour">
+            <label for="date">Hour</label>
+          </div>
         </div>
-        <div class="form-floating" style="width:45%;">
-          <input type="time" class="form-control" id="hour" name="hour">
-          <label for="date">Hour</label>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="place" placeholder="Place here" name="place">
+          <label for="place">Place</label>
         </div>
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="place" placeholder="Place here" name="place">
-        <label for="place">Place</label>
-      </div>
+      <p class="w-100 text-center text-danger fw-bold" id="text-blog">*Blog dont need "Date" and "Place".</p>
       <div class="form-multimedia">
           <label for="image" class="label-multi">Image</label>
           <label for="image" class="label-image">

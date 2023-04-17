@@ -32,6 +32,7 @@
             $_SESSION['event'] =  "Smalls_Events"; 
         @endphp 
 
+
     @elseif(Request::path() === "events")
     
         @include('publications.publication') 
@@ -40,6 +41,11 @@
     @elseif(Request::path() === "filter")
     
         @include('filterPublications') 
+
+        
+    @elseif(Request::path() === "yourEvents")
+    
+        @include('publications.yourEvents') 
 
 
         

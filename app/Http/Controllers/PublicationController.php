@@ -60,17 +60,26 @@ class PublicationController extends Controller
         return redirect($URL);
     }
     public function showOnePublication($id){
+
+        //$messagesReference = Publication, Publication_details::all()->join('Publication_details', 'Publication_details.id_reference_publication', '=', 'Publications.id');
+
         $publications = Publication::findOrFail($id);
 
         $id_reference = $publications->Id_Reference_User;
-        $user = User::findOrFail($id_reference); 
+        $user = User::findOrFail($id_reference);
+        $totalUsers = User::all();
 
         $publicationsDetails = Publication_details::findOrFail($id);
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
         return view('dashboard', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'likes' => $likes, 'publications' => $publications, 'user'=> $user]);
+        ['publicationsDetails' => $publicationsDetails],
+        ['messages' => $messages, 
+        'likes' => $likes, 
+        'publications' => $publications, 
+        'user'=> $user,
+        'totalUsers'=> $totalUsers]);
     }
     public function eventDate(Request $request){
 
@@ -130,12 +139,16 @@ class PublicationController extends Controller
         return redirect('/homePage');
     }
     public function showYourEvents(){
-        $messages = Message::all()->sortByDesc('created_at');
-        $publications = Publication::all()->sortByDesc('created_at');
-        $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
+        session_start();
 
-        return view('yourEvents', 
-        ['publicationsDetails' => $publicationsDetails],['messages' => $messages, 'publications' => $publications]);
+        $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
+        $publications = Publication::all()->sortByDesc('created_at');
+        $likes = Like::all()->sortByDesc('created_at');
+        $messages = Message::all()->sortByDesc('created_at');
+
+        return view('dashboard', 
+        ['publicationsDetails' => $publicationsDetails],
+        ['messages' => $messages, 'publications' => $publications, 'likes' => $likes]);
     }
     public function filter(Request $request){
         session_start();
@@ -155,13 +168,13 @@ class PublicationController extends Controller
 
             if($mostPopular == 1){
 
-                $filtersDate = Publication_details::whereMonth(
+                $filtersDate = Publication_details::where('category', $event)->whereMonth(
                     'date', $formatDateNew 
                 )->get();
 
             } else{
 
-                $filtersDate = Publication_details::whereMonth(
+                $filtersDate = Publication_details::where('category', $event)->whereMonth(
                     'date', $formatDateNew
                 )->get();
 
@@ -174,7 +187,7 @@ class PublicationController extends Controller
                 $filtersDate = Publication_details::where([
                     ['date', $dateNew],
                     ['category', $event]
-                ])->get();          //DEBO AGREGAR ORDEN CON MOST POPULAR
+                ])->get();         
 
             } else {
 
@@ -184,7 +197,7 @@ class PublicationController extends Controller
                 ])->get();
 
             }
-    }
+        }
 
     
         return view('dashboard', 

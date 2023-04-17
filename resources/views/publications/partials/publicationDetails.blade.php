@@ -29,7 +29,7 @@
         <small><i class="text-body-secondary">{{$user->email}}</i></small>
         @auth
             @if($publications->Id_Reference_User == Auth::user()->id)
-                <div class="option-event dropend d-flex justify-content-start text-white m-3">
+                <div class="option-event">
                         <img src="/images/Option_Event.png" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu ps-3">
                         <li class="mb-2">
@@ -49,7 +49,7 @@
     </div>
     <div class="detailsEvent w-100">
         <h2>{{$publicationsDetails->title}}</h2>
-        <p class="mb-0">{{$publicationsDetails->content}}</p>
+        <p class="mb-0">{{$publicationsDetails->content}}</p><br>
         <div class="time-publi w-100 text-end mt-2">
             <small class="d-flex justify-content-between">
                 <div>
@@ -102,6 +102,9 @@
                     @endif
                 @endif
             @endauth
+            @guest
+                <i class="bi bi-heart-fill text-danger" id="heart"></i>
+            @endguest
             <small class="ms-1">{{$countLike}}</small>
         </div>
         <div class="Comments d-flex align-items-center">

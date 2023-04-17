@@ -38,7 +38,7 @@ nav ul {
 .navtext a:hover {
     color: rgb(0, 179, 255);
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .navtext a {
         display: none;
     }
@@ -46,7 +46,14 @@ nav ul {
         width: 75%;
     }
 }
-@media (min-width: 450px) {
+@media (min-width: 800px) {
+    .navtext {
+        width: 80%;
+    }
+    .back-calendar {
+        width: 10rem;
+        height: 10rem;
+    }
     .navtextside {
         display: none;
         text-decoration: none;
@@ -56,6 +63,14 @@ nav ul {
     }
     .firstclass {
         margin-top: 2rem;
+    }
+    #offcanvasDarkNavbar {
+        width: 35%;
+    }
+}
+@media (min-width: 1250px) {
+    .navtext {
+        width: 65%;
     }
     #offcanvasDarkNavbar {
         width: 25%;

@@ -114,3 +114,24 @@ document.querySelector("#btn-month").onclick = () => {
 function getObject(eventDate) {
     console.log(eventDate.value);
 }
+
+function changeFormBlog() {
+    var categoryBlog = document.getElementById("category-blog");
+    var blogNone = document.getElementById("blogNone");
+    var content = document.getElementById("content");
+    var textBlog = document.getElementById("text-blog");
+
+    if (categoryBlog.checked) {
+        //dateInput.type = "month";
+        console.log("first");
+        blogNone.style.display = "none";
+        textBlog.style.display = "inherit";
+        content.style.height = "12rem";
+    } else if (!categoryBlog.checked) {
+        //dateInput.type = "date";
+        console.log("two");
+        blogNone.style.display = "inherit";
+        textBlog.style.display = "none";
+        content.style.height = "100%";
+    }
+}

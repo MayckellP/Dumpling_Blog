@@ -52,7 +52,7 @@
         <!-- EVENTS SECTION DESKTOP -->
         <section class="events-group-desktop">
             <div class="g_event">
-                <a href="/General_Events" class="h-100 text-decoration-none">
+                <a href="/General_Events" class="h-100 text-decoration-none text-white">
                     <div class="card-body">
                         General Events
                     </div>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="food_event">
-                <a href="/Food_Events" class="h-100 text-decoration-none">
+                <a href="/Food_Events" class="h-100 text-decoration-none text-white">
                     <div class="card-body">
                         Food & Drink
                     </div>
@@ -68,7 +68,7 @@
             </div>
 
             <div class="club_event">
-                <a href="/Pub_Events" class="h-100 text-decoration-none">
+                <a href="/Pub_Events" class="h-100 text-decoration-none text-white">
                     <div class="card-body">
                        Clubs
                     </div>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="blog_event">
-                <a href="/Smalls_Events" class="h-100 text-decoration-none">
+                <a href="/Smalls_Events" class="h-100 text-decoration-none text-white">
                     <div class="card-body">
                         Blogs
                     </div>

@@ -1,11 +1,12 @@
 /** ----------------------------------------------------------------------START: PUBLICATION CARD  */
 .eventPage {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 .cont-card {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     height: 11em;
+    display: flex;
 }
 .cont-left {
     width: 60%;
@@ -44,6 +45,120 @@
     right: 1.5rem;
     color: #5496fa;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/** ----------------------------------------------------------------------START: CARD BLOG  */
+
+.cont-blog {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 16em;
+    display: flex;
+    flex-direction: column;
+}
+.title-blog {
+    font-family: "Sen", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+    border-radius: 10px 10px 0px 10px;
+}
+.body-blog {
+    display: flex;
+    width: 100%;
+    height: 12em;
+}
+.blog-left {
+    width: 40%;
+    height: 100%;
+    border-radius: 0px 0px 0px 10px;
+}
+.imgBlog {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 0px 0px 0px 10px;
+}
+.imgBlog img {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+.blog-right {
+    width: 60%;
+    background-color: #af95cb;
+    border-radius: 0px 0px 10px 0px;
+    padding-top: 0.5em;
+}
+.content-blog {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    resize: none;
+}
+.username-blog {
+    font-family: "Sen", sans-serif;
+    color: white;
+    margin-bottom: 0px;
+}
+.content-blog {
+    font-size: 12px;
+    width: 100%;
+}
+
+/** ----------------------------------------------------------------------END: CARD BLOG  */
+
+@media (min-width: 1000px) {
+    .eventPage {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .cont-blog,
+    .cont-card,
+    .accordion {
+        display: none;
+    }
+    .calendar-left {
+        background-color: red;
+        width: 20%;
+    }
+    .event-center {
+        background-color: rgba(0, 0, 0, 0.281);
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .eventCard-pc {
+        background-color: rgba(23, 161, 250, 0.6);
+        border-radius: 20px;
+    }
+    .titleEvent-pc {
+        font-size: 20px;
+    }
+    .textarea-content {
+        background-color: #d9d9d9;
+        border: none;
+        overflow: hidden;
+        resize: none;
+        border-radius: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .filter-right {
+        background-color: white;
+        width: 20%;
+    }
 }
 
 /** ----------------------------------------------------------------------END: PUBLICATION CARD  */
@@ -89,7 +204,7 @@
 }
 .option-event {
     position: absolute;
-    right: 1rem;
+    right: 2rem;
 }
 .option-event img {
     width: 100%;
