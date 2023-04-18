@@ -11,6 +11,8 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use DateTime;
 
+
+
 class PublicationController extends Controller
 {
     public function showAll(){
@@ -21,9 +23,11 @@ class PublicationController extends Controller
         $likes = Like::all();
         $messages = Message::all();
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],
         ['messages' => $messages, 'publications' => $publications, 'likes'=>  $likes]);
+
     }
     public function create(Request $request){
         $publication = new Publication();
@@ -73,6 +77,7 @@ class PublicationController extends Controller
         $likes = Like::all();
         $messages = Message::all()->sortByDesc('created_at');
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],
         ['messages' => $messages, 
@@ -88,6 +93,7 @@ class PublicationController extends Controller
         $eventDates = Publication_details::where('date', $newDate)->get();
     
         return view('datePublication', ['eventDates' => $eventDates]);
+
     }
     public function showPublicationToEdit( $id){
         $publications = Publication::findOrFail($id);
@@ -99,8 +105,10 @@ class PublicationController extends Controller
 
         $publicationsDetails = Publication_details::findOrFail($id);
 
+
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails], ['publications' => $publications, 'user'=> $user, 'messages'=> $messages]);
+
     }
     public function edit(Request $request, $id){
         $publicationsDetails = Publication_details::findOrFail($id);
@@ -132,7 +140,7 @@ class PublicationController extends Controller
         $like = new Like();
 
         $like->Id_Reference_Publication = $request->Id_Reference_Publication;
-        $like->id_reference_user = $request->id_reference_user;
+       /*  $like->id_reference_user = $request->id_reference_user; */
 
         $like->save();
 
@@ -172,6 +180,7 @@ class PublicationController extends Controller
                     'date', $formatDateNew 
                 )->get();
 
+
             } else{
 
                 $filtersDate = Publication_details::where('category', $event)->whereMonth(
@@ -206,5 +215,17 @@ class PublicationController extends Controller
         'publications' => $publications, 
         'likes'=>  $likes, 
         'event'=>$event]);
+
     }
+    
+    public function delete($id) {
+
+        $result = Publication_details::findOrFail($id)->delete();
+        $result2 = Publication::findOrFail($id)->delete();
+ 
+ 
+        // after that we redirect to the message list again  
+        return redirect('/homePage');        
+    } 
+ 
 }

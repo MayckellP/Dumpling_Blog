@@ -1,3 +1,4 @@
+
 <x-app-layout>      
     <div class="cont-home">
 
@@ -47,6 +48,7 @@
                   </span>
                 </label>
             </section>
+
         </div>
 
         <!-- EVENTS SECTION DESKTOP -->
@@ -75,12 +77,14 @@
                 </a>
             </div>
 
+
             <div class="blog_event">
                 <a href="/Smalls_Events" class="h-100 text-decoration-none text-white">
                     <div class="card-body">
                         Blogs
                     </div>
                 </a>
+
             </div>
         </section>
     </div>

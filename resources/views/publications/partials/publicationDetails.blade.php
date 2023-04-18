@@ -18,6 +18,7 @@
     @endif
 @endforeach
 
+
 @include('components.headerEvents')
 
 <div class="cont-publication m-2 p-2">
@@ -58,6 +59,7 @@
                 <div class="w-50">
                     <i class="bi bi-calendar text-white me-4 fw-bold"> {{$publicationsDetails->date}}</i>
                     <i class="bi bi-clock-fill text-white p-2 bg-dark rounded-3 fw-bold"> {{$publicationsDetails->hour}}</i>
+
                 </div>
             </small>
         </div>
@@ -68,40 +70,53 @@
     <div class="likesEvent d-flex justify-content-around">
         <div class="likes d-flex align-items-center">
             @auth
+
                 @if($likes->isEmpty())
+
                     <form action="/like" method="post">
                         <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                         <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                         <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                        @csrf 
+                        @csrf
+                        @csrf
                         <button type="submit" >
                             <label for="checklike" class="bi-heart-fill me-1" id="heart"></label>
                         </button>
                     </form>
                 @else
+
                     @foreach($likes as $like)
+
                         @if($like->id_reference_user == Auth::user()->id && $like->Id_Reference_Publication == $publicationsDetails->id)
                             @php
                                 $validationLike++;
-                            @endphp            
-
+                            @endphp
                         @endif
                     @endforeach
+
                     @if($validationLike == 1)     
                         <i class="bi bi-heart-fill text-danger" id="heart"></i>      
                     @else
+
                             <form action="/like" method="post">
                                 <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                                 <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                                 <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
-                                @csrf 
+                                @csrf
+                                @csrf
                                 <button type="submit">
                                     <label for="checklike" class="bi-heart-fill me-1" id="heart"></label>
                                 </button>
-                            </form>  
-                    @endif
+                            </form>
+                          @endif
+                          <form action="/message/{{$publicationsDetails->id}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit"><i class="bi bi-trash3-fill"></i>Delete</button>
+                        </form>
                 @endif
             @endauth
+
             @guest
                 <i class="bi bi-heart-fill text-danger" id="heart"></i>
             @endguest
@@ -115,6 +130,7 @@
         <div class="cont-created">
             <p class="text-body-secondary m-auto">created at {{$publicationsDetails->created_at->diffForHumans()}}</p>
         </div>
+
     </div>
 </div>
 @include('publications.partials.createMessage')

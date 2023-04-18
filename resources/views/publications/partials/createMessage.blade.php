@@ -1,8 +1,10 @@
+
   <div class="cont-message p-2 w-100">
     @auth
         <form action="/create_message/{{$publicationsDetails->id_reference_publication}}" method="post" class="d-flex w-100 align-items-center" >     
             <div class="cont-imgProfile">
                 <img src="/DB_Img/post/{{Auth::user()->foto}}" alt="">
+
             </div>
             <div class="message ms-3" style="width:60%;">
                 <input class="invisible d-none" type="text" name="username" id="username" placeholder="Username" value="{{Auth::user()->name}}">

@@ -1,7 +1,10 @@
 <!-- ARBEIT MIT "SWITCH" UND NICHT "IF-ELSE-IF" -->
 
 <x-app-layout>
+
     @if(Request::path() === "General_Events")
+
+
         
         @include('publications.publication')
         @php
@@ -10,6 +13,7 @@
 
         
     @elseif(Request::path() === "Food_Events")
+
         
         @include('publications.publication')
         @php
@@ -48,6 +52,7 @@
         @include('publications.yourEvents') 
 
 
+
         
         
 
@@ -57,7 +62,9 @@
         
         @include('publications.partials.publicationDetails')
 
+
     @else
+
         @include('publications.partials.publicationEdit')
     @endif
     
