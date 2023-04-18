@@ -169,6 +169,9 @@ input:checked + .blogs:after {
 .events-group-desktop {
     display: none;
 }
+.about-group-desktop {
+    display:flexbox;
+}
 @media (min-width: 800px) {
     .cont-sections {
         display: flex;
@@ -199,6 +202,18 @@ input:checked + .blogs:after {
         width: 90%;
         z-index: 2;
     }
+    .about-group-desktop {
+        display: block;
+        display: flex;
+        justify-content:center;
+        background-color:rgba(255, 255, 255, 0.5);
+        margin-top: 10%;
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+        z-index: 2;
+    }
+
     .g_event {
         height: 42vh;
         width: 22%;
@@ -314,6 +329,9 @@ input:checked + .blogs:after {
     .blog_event {
         height: 45vh;
     }
+    .about-group-desktop {
+        width:fit-content;
+    }
 }
 @media (min-width: 1500px) {
     .logo-back {
@@ -329,6 +347,9 @@ input:checked + .blogs:after {
     .blog_event {
         height: 57vh;
         width: 20%;
+    }
+    .about-group-desktop {
+        display:flexbox;
     }
 }
 @media (min-width: 1900px) {
@@ -349,4 +370,11 @@ input:checked + .blogs:after {
     .card-body {
         font-size: 50px;
     }
+    .about-group-desktop {
+        width: 65%;
+        margin-bottom: 8rem;
+    }
 }
+
+
+/* About Us */
