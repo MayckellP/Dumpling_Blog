@@ -1,5 +1,4 @@
 <div class="cont-calendarFilter">
-    
     <div class="back-calendar" id="back-calendar">
     	<button id="btn-month">
     		<img src='/images/calendar.svg' alt="Calendar">

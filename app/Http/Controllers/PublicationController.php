@@ -61,6 +61,7 @@ class PublicationController extends Controller{
     public function showOnePublication($id){
         //$messagesReference = Publication, Publication_details::all()->join('Publication_details', 'Publication_details.id_reference_publication', '=', 'Publications.id');
 
+        session_start();
         $publications = Publication::findOrFail($id);
 
         $id_reference = $publications->Id_Reference_User;
@@ -88,6 +89,7 @@ class PublicationController extends Controller{
         return view('datePublication', ['eventDates' => $eventDates]);
     }
     public function showPublicationToEdit( $id){
+        session_start();
         $publications = Publication::findOrFail($id);
 
         $id_reference = $publications->Id_Reference_User;

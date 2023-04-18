@@ -1,5 +1,8 @@
 /** ----------------------------------------------------------------------START: PUBLICATION CARD  */
-
+.logo-event {
+    display: none;
+    background-color: rgba(255, 255, 255, 0);
+}
 /*? -----------------------------------START: PUBLICATION CARD  */
 .calendar-left,
 .event-center,
@@ -128,58 +131,6 @@
 
 /** ----------------------------------------------------------------------END: CARD BLOG  */
 
-@media (min-width: 1000px) {
-    .eventPage {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .cont-blog,
-    .cont-card,
-    .accordion {
-        display: none;
-    }
-    .calendar-left,
-    .event-center,
-    .filter-right,
-    .allMonth-pc,
-    .mostPopular-pc,
-    .search-pc {
-        display: inherit;
-    }
-    .calendar-left {
-        background-color: red;
-        width: 20%;
-    }
-    .event-center {
-        background-color: rgba(0, 0, 0, 0.281);
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .eventCard-pc {
-        background-color: rgba(23, 161, 250, 0.6);
-        border-radius: 20px;
-    }
-    .titleEvent-pc {
-        font-size: 20px;
-    }
-    .textarea-content {
-        background-color: #d9d9d9;
-        border: none;
-        overflow: hidden;
-        resize: none;
-        border-radius: 10px;
-        font-size: 12px;
-        text-align: center;
-    }
-    .filter-right {
-        background-color: white;
-        width: 20%;
-    }
-}
-
 /** ----------------------------------------------------------------------END: PUBLICATION CARD  */
 
 /** ----------------------------------------------------------------------START: PUBLICATION DETAILS  */
@@ -234,6 +185,10 @@
 .option-event img:hover {
     cursor: pointer;
 }
+.option-event-PC:hover {
+    cursor: pointer;
+}
+
 .dropdown-menu a:hover {
     background-color: rgba(0, 0, 0, 0);
 }
@@ -352,3 +307,78 @@
 }
 
 /** ----------------------------------------------------------------------END: EDIT PUBLICATION */
+@media (min-width: 1000px) {
+    /*? --------------------------------------START: PUBLICATION CARD */
+    .cont-blog,
+    .cont-card,
+    .accordion,
+    .toCreate {
+        display: none;
+    }
+    .calendar-left,
+    .event-center,
+    .filter-right,
+    .allMonth-pc,
+    .mostPopular-pc,
+    .search-pc,
+    .logo-event {
+        display: inherit;
+        z-index: 2;
+    }
+    .eventPage {
+        background: url("/public/images/bg-pc2.svg") no-repeat;
+        background-size: cover;
+        z-index: 0;
+    }
+    .body-publication {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .calendar-left {
+        width: 20%;
+    }
+    .event-center {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .eventCard-pc {
+        background-color: rgba(23, 161, 250, 0.6);
+        border-radius: 20px;
+    }
+    .titleEvent-pc {
+        font-size: 20px;
+    }
+    .textarea-content {
+        background-color: #d9d9d9;
+        border: none;
+        overflow: hidden;
+        resize: none;
+        border-radius: 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+    .filter-right {
+        width: 20%;
+    }
+    /*? --------------------------------------START: PUBLICATION DETAILS */
+    .body-detailsEvent {
+        display: none;
+    }
+    .body-detailsEvent-PC {
+        background: url("/public/images/bg-pc2.svg") no-repeat;
+        background-size: cover;
+    }
+
+    /*? --------------------------------------START: PUBLICATION EDIT */
+    .bodyEdit-PC {
+        display: none;
+    }
+
+    /*? --------------------------------------START: PUBLICATION CREATE */
+    .bodyEventCreate {
+        display: none;
+    }
+}

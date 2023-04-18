@@ -19,6 +19,7 @@
         'resources/css/publication.css',
         'resources/css/comment.css', 
         'resources/css/components.css', 
+        'resources/css/footer.css', 
         'resources/js/app.js', 
         'resources/sass/app.scss'
         ])

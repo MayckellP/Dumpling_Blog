@@ -73,19 +73,6 @@ function backPage() {
     setTimeout("history.back()", 500);
 }
 
-function changeDate() {
-    var checkMonth = document.getElementById("checkMonth");
-    var dateInput = document.getElementById("dateInput");
-
-    if (checkMonth.checked) {
-        //dateInput.type = "month";
-        checkMonth.value = 1;
-    } else if (!checkMonth.checked) {
-        //dateInput.type = "date";
-        checkMonth.value = 0;
-    }
-}
-
 const accordionItemHeaders = document.querySelectorAll(
     ".accordion-item-header"
 );
@@ -113,6 +100,42 @@ document.querySelector("#btn-month").onclick = () => {
 };
 function getObject(eventDate) {
     console.log(eventDate.value);
+}
+
+var dateInput = document.getElementById("monthPC");
+var textDate = document.getElementById("text-date");
+
+function changeDate() {
+    var checkMonth = document.getElementById("checkMonth");
+    var checkMonthPC = document.getElementById("checkMonthPC");
+
+    if (checkMonth.checked) {
+        checkMonth.value = 1;
+    } else if (!checkMonth.checked) {
+        checkMonth.value = 0;
+    }
+
+    if (checkMonthPC.checked) {
+        checkMonthPC.value = 1;
+        console.log("first");
+    } else if (!checkMonthPC.checked) {
+        checkMonthPC.value = 0;
+        console.log("two");
+    }
+}
+
+document.querySelector("#btn-month").onclick = () => {
+    eventDate = document.getElementById("monthPC");
+    try {
+        eventDate.showPicker();
+    } catch (error) {
+        window.alert(error);
+    }
+};
+
+function getObject(eventDate) {
+    console.log(eventDate.value);
+    textDate.innerHTML = dateInput.value;
 }
 
 function changeFormBlog() {

@@ -44,9 +44,9 @@
         @if(Request::path() !== "homePage" )
             <div class="navtext d-flex justify-content-around">
                 <a class="fw-bold fs-3" href="/General_Events">GENERAL EVENTS</a>
-                <a class="fw-bold fs-3" href="Food_Events">EAT & DRINK</a>
-                <a class="fw-bold fs-3" href="Pub_Events">CLUBs</a>
-                <a class="fw-bold fs-3" href="Smalls_Events">BLOG</a>
+                <a class="fw-bold fs-3" href="/Food_Events">EAT & DRINK</a>
+                <a class="fw-bold fs-3" href="/Pub_Events">CLUBs</a>
+                <a class="fw-bold fs-3" href="/Smalls_Events">BLOG</a>
             </div>
         @endif
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
