@@ -6,35 +6,26 @@
 
 
         
-        @include('publications.publication')
-        @php
-            $_SESSION['event'] =  "General_Events";
-        @endphp 
+        @include('publications.publication') 
 
         
     @elseif(Request::path() === "Food_Events")
 
         
         @include('publications.publication')
-        @php
-            $_SESSION['event'] =  "Food_Events";
-        @endphp 
+        
          
 
     @elseif(Request::path() === "Pub_Events")
        
         @include('publications.publication')
-        @php
-            $_SESSION['event'] =  "Pub_Events"; 
-        @endphp 
+        
         
 
     @elseif(Request::path() === "Smalls_Events")
         
         @include('publications.publication')
-        @php
-            $_SESSION['event'] =  "Smalls_Events"; 
-        @endphp 
+         
 
 
     @elseif(Request::path() === "events")

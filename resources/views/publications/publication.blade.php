@@ -2,6 +2,7 @@
   $countComment = 0;
   $countLike = 0;
   $validationLike = 0;
+  $_SESSION['event'] =  Request::path();
 @endphp
 
 
