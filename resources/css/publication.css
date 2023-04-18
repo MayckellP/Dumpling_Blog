@@ -1,4 +1,15 @@
 /** ----------------------------------------------------------------------START: PUBLICATION CARD  */
+
+/*? -----------------------------------START: PUBLICATION CARD  */
+.calendar-left,
+.event-center,
+.filter-right,
+.allMonth-pc,
+.mostPopular-pc,
+.search-pc {
+    display: none;
+}
+
 .eventPage {
     background-color: rgb(255, 255, 255);
 }
@@ -127,6 +138,14 @@
     .cont-card,
     .accordion {
         display: none;
+    }
+    .calendar-left,
+    .event-center,
+    .filter-right,
+    .allMonth-pc,
+    .mostPopular-pc,
+    .search-pc {
+        display: inherit;
     }
     .calendar-left {
         background-color: red;

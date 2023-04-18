@@ -73,13 +73,18 @@
             <div class="allMonth-pc w-100 mb-3">
                 @include('components.allMonth')
             </div>
-            <div class="mostPopular-pc w-100 mb-3">
+            <div class="mostPopular-pc w-100 mb-3 ">
                 @include('components.mostPopular')
             </div>
             <div class="search-pc w-100 mb-3">
                 @include('components.search')
             </div>
         </div>
+    </div>
+    <div class="buttons-footer">
+        <a href=""></a><buton class="" id=""></buton>
+        <a href=""></a><buton class="" id=""></buton>
+        <a href=""></a><buton class="" id=""></buton>
     </div>
 </div>
 
