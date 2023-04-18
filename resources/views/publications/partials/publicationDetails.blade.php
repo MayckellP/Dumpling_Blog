@@ -53,6 +53,7 @@
                         <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                         <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
                         @csrf
+                        @csrf
                         <button type="submit" >
                             <label for="checklike" class="bi-heart-fill" id="heart"></label>
                         </button>
@@ -72,6 +73,7 @@
                                 <input type="hidden" id="checkValue" value="{{$publicationsDetails->id_reference_publication}}">
                                 <input type="hidden" id="checkValue" name="id_reference_user" value="{{Auth::user()->id}}">
                                 <input type="checkbox" name="Id_Reference_Publication" id="checklike" onclick="like()" class="d-none">
+                                @csrf
                                 @csrf
                                 <button type="submit">
                                     <label for="checklike" class="bi-heart-fill" id="heart"></label>
