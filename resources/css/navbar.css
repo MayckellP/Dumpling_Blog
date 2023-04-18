@@ -3,6 +3,7 @@
 /** --------------------------------------------------------------------NAVBAR  */
 .navbar {
     background: rgba(0, 0, 0, 0.872);
+    z-index: 3;
 }
 .dropdown-menu a:hover {
     background: rgba(0, 0, 0, 0.794);

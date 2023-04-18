@@ -11,15 +11,14 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use DateTime;
 
-class PublicationController extends Controller
-{
+class PublicationController extends Controller{
     public function showAll(){
         session_start();
-
         $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
         $publications = Publication::all()->sortByDesc('created_at');
         $likes = Like::all();
         $messages = Message::all();
+
 
         return view('dashboard', 
         ['publicationsDetails' => $publicationsDetails],
@@ -60,7 +59,6 @@ class PublicationController extends Controller
         return redirect($URL);
     }
     public function showOnePublication($id){
-
         //$messagesReference = Publication, Publication_details::all()->join('Publication_details', 'Publication_details.id_reference_publication', '=', 'Publications.id');
 
         $publications = Publication::findOrFail($id);
@@ -199,7 +197,7 @@ class PublicationController extends Controller
             }
         }
 
-    
+        //session_destroy(); 
         return view('dashboard', 
         ['filtersDate' => $filtersDate],
         ['messages' => $messages, 
