@@ -22,13 +22,11 @@ Route::get('/contactPage', function(){
     return view('contactPage');
 })->name('contactPage');
 
-Route::get('/yourEvents', function(){
-    return view('yourEvents');
-})->name('yourEvents');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+
+/*--------------------------------------------------YOUR EVENTS - JUST WITH AUTH */
+Route::get('/yourEvents', [PublicationController::class, 'showAll'])->name('yourEvents');
+
 
 
 
@@ -51,7 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Food_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Pub_Events', [PublicationController::class, 'showAll'])->name('dashboard');
     Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('dashboard');
-    Route::get('/yourEvents', [PublicationController::class, 'showYourEvents'])->name('yourEvents');
+    Route::get('/yourEvents', [PublicationController::class, 'showAll'])->name('dashboard');
 });
 
 /*-------------------------------WITHOUT AUTH */
@@ -61,7 +59,9 @@ Route::get('/Pub_Events', [PublicationController::class, 'showAll'])->name('dash
 Route::get('/Smalls_Events', [PublicationController::class, 'showAll'])->name('dashboard');
 
 
+Route::post('/events', [PublicationController::class, 'eventDate']);
 
+Route::get('/filter', [PublicationController::class, 'filter'])->name('publications.partials.publicationDetails');
 
 
 /*--------------------------------------------------TO CREATE EVENTS - JUST WITH AUTH */
@@ -116,11 +116,10 @@ Route::get('/details/{id}', [PublicationController::class, 'showOnePublication']
 
 /*-------------------------------WITHOUT AUTH */
 
-/*-------------------------------Publication Delete */
 
-/* Route::delete('/publications/{id}', [PublicationController::class, 'delete'])->name('publications.delete'); */
+Route::post('/create_message/{id}', [MessageController::class, 'createMessage'])->name('publication.partials.publicationEdit/edit');
 
-Route::delete('/message/{id}', [PublicationController::class, 'delete']);
+
 
 
 require __DIR__.'/auth.php';

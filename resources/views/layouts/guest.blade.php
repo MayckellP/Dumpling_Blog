@@ -11,11 +11,22 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
+        @vite([
+        'resources/css/app.css',
+        'resources/css/navbar.css', 
+        'resources/css/homePage.css',
+        'resources/css/publication.css',
+        'resources/css/comment.css', 
+        'resources/css/components.css', 
+        'resources/js/app.js', 
+        'resources/sass/app.scss'
+        ])
+
       </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            @include('layouts.altNavigation')
+
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -28,6 +39,11 @@
 
             <!-- Page Content -->
             <main class="w-50 m-auto mt-5">
+            @if(Request::path() ==! "login" || Request::path() ==! "register")
+                @include('components.translateButton')
+            @elseif(Request::path() === "login" || Request::path() === "register")
+                <img src="images/justDumplingLogo.svg" class="mb-4" alt="">
+            @endif
                 {{ $slot }}
             </main>
         </div>

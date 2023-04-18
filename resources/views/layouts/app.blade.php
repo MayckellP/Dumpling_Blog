@@ -17,15 +17,40 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/sass/app.scss'])
+        @vite([
+        'resources/css/app.css',
+        'resources/css/navbar.css', 
+        'resources/css/homePage.css',
+        'resources/css/publication.css',
+        'resources/css/comment.css', 
+        'resources/css/components.css', 
+        'resources/js/app.js', 
+        'resources/sass/app.scss'
+        ])
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            {{--  from here the navbar blade getts implemented in the page  --}}
-            @include('layouts.navbar')
+
+                @include('layouts.altNavigation')
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
 
             <!-- Page Content -->
             <main>
+                @if(Request::path() ==! "login" || Request::path() ==! "register")
+                    @include('components.translateButton')
+                @elseif(Request::path() === "login" || Request::path() === "register")
+                    <img src="images/justDumplingLogo.svg" class="mb-4" alt="">
+                @endif
                 {{ $slot }}
             </main>
         </div>
