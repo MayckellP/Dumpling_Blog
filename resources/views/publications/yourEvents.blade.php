@@ -81,7 +81,7 @@
                                     @include('components.cardEvents-PC')
                                 @endif
                                 @if($publicationsDetail->category === "Smalls_Events")
-                                    @include('components.cardBlog')
+                                    @include('components.cardEvents-PC')
                                     @endif
                             @endif
                         @endif

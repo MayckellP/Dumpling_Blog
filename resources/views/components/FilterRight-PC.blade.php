@@ -1,4 +1,4 @@
-<div class="filter-pc w-75 d-flex flex-column justify-content-center">
+<div class="filter-pc w-75">
     <div class="search-pc w-100 mb-5">
         @include('components.search')
     </div>

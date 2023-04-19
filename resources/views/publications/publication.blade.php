@@ -2,6 +2,10 @@
   $countComment = 0;
   $countLike = 0;
   $validationLike = 0;
+
+  $countCommentPC = 0;
+  $countLikePC = 0;
+  $validationLikePC = 0;
   $_SESSION['event'] =  Request::path();
 @endphp
 
@@ -44,7 +48,7 @@
     </div>
 
     <!-- DESIGN DESKTOP VERSION -->
-    <div class="logo-event w-100">
+    <div class="logo-event w-100 mb-5">
         <img src="images/signWithLogo.svg" alt="" class="w-25 m-auto">
     </div>
 
@@ -60,14 +64,14 @@
                         @foreach ($messages as $message)
                             @if($publicationsDetail->id_reference_publication == $message->Id_Reference_Publication)
                                 @php
-                                  $countComment++;
+                                  $countCommentPC++;
                                 @endphp
                             @endif
                         @endforeach
                         @foreach ($likes as $like)
                             @if($publicationsDetail->id_reference_publication == $like->Id_Reference_Publication)
                                 @php
-                                  $countLike++;
+                                  $countLikePC++;
                                 @endphp
                             @endif
                         @endforeach
@@ -77,21 +81,36 @@
 
                         @elseif($publicationsDetail->category === "Smalls_Events")
 
-                            @include('components.cardBlog')
+                            @include('components.cardEvents-PC')
 
                         @endif
                     @endif
                 @endforeach
 
                 @include('components.sectionFooter')
+                <ul class="pagination m-auto mb-5">
+                  <li class="page-item">
+                    <a class="page-link text-black" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link text-black" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link text-black " href="#">2</a></li>
+                  <li class="page-item"><a class="page-link text-black " href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link text-black" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul> 
             </div>
 
-            <div class="filter-right d-flex justify-content-center">
+            <div class="filter-right">
                 @include('components.FilterRight-PC')
-                @csrf 
-                @method('get')
             </div>
         </div>
+        @csrf 
+        @method('get')
     </form>
 </div>
 

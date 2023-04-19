@@ -50,6 +50,7 @@ class PublicationController extends Controller{
             $image->move($routeImage,$nameImage);
             $publicationDetails->image = $nameImage;
        }
+       
 
         $publicationDetails->save();
 
@@ -59,7 +60,6 @@ class PublicationController extends Controller{
         return redirect($URL);
     }
     public function showOnePublication($id){
-        //$messagesReference = Publication, Publication_details::all()->join('Publication_details', 'Publication_details.id_reference_publication', '=', 'Publications.id');
 
         session_start();
         $publications = Publication::findOrFail($id);
@@ -83,10 +83,11 @@ class PublicationController extends Controller{
     public function eventDate(Request $request){
 
         $newDate = $request->month;
-    
+        $publications = Publication::all()->sortByDesc('created_at');
+
         $eventDates = Publication_details::where('date', $newDate)->get();
     
-        return view('datePublication', ['eventDates' => $eventDates]);
+        return view('datePublication', ['eventDates' => $eventDates, 'publications' => $publications]);
     }
     public function showPublicationToEdit( $id){
         session_start();
@@ -158,6 +159,7 @@ class PublicationController extends Controller{
         $mostPopular = $request->mostPopular;
     
         $publications = Publication::all()->sortByDesc('created_at');
+        $publicationsDetails = Publication_details::all()->sortByDesc('created_at');
         $likes = Like::all();
         $messages = Message::all();
 
@@ -168,7 +170,7 @@ class PublicationController extends Controller{
 
             if($mostPopular == 1){
 
-                $filtersDate = Publication_details::where('category', $event)->whereMonth(
+                $filtersDate = Publication_details::all()->where('category', $event)->whereMonth(
                     'date', $formatDateNew 
                 )->get();
 
@@ -205,6 +207,7 @@ class PublicationController extends Controller{
         ['messages' => $messages, 
         'publications' => $publications, 
         'likes'=>  $likes, 
-        'event'=>$event]);
+        'event'=>$event,
+        'publicationsDetails'=>$publicationsDetails]);
     }
 }

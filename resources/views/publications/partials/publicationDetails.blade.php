@@ -138,7 +138,6 @@
             </div>
 
             <div class="event-center mt-2 ">
-                @if($publicationsDetails->category !== "Smalls_Events")
 
                     <div class="eventCard-pc d-flex flex-row p-3 mb-3 align-items-center">
                         <div class="infoEvent-pc d-flex w-50 flex-column">
@@ -187,17 +186,11 @@
                             @endauth
                         </div>
                     </div>
-
-                @elseif($publicationsDetails->category === "Smalls_Events")
-
-                    @include('components.cardBlog')
-
-                @endif
                 
                     @include('components.sectionFooter')
             </div>
 
-            <div class="filter-right d-flex justify-content-center z-2">
+            <div class="filter-right">
                 @include('components.FilterRight-PC')
                 @csrf 
                 @method('get')
@@ -205,15 +198,15 @@
         </div>
     </form>
 
-    <div class="d-flex mt-0 pt-0 m-auto justify-content-between align-items-start" style="width:90%">
-        <div class="cont-message p-2 mt-0 rounded-5" style="width:45%">
+    <div class="messages-PC d-flex mt-0 pt-0 m-auto justify-content-between align-items-start" style="width:90%">
+        <div class="cont-message-PC p-2 mt-0 rounded-5" style="width:45%">
             @auth
                 <form action="/create_message/{{$publicationsDetails->id_reference_publication}}" method="post">     
                     <div class="d-flex w-100 align-items-center">
                         <div class="cont-imgProfile">
                             <img src="/DB_Img/post/{{Auth::user()->foto}}" alt="">
                         </div>
-                        <div class="message ms-3" style="width:72%;">
+                        <div class="message-PC d-flex flex-column ms-3" style="width:75%;">
                             <input class="invisible d-none" type="text" name="username" id="username" placeholder="Username" value="{{Auth::user()->name}}">
                             <h5 class="fs-4">{{Auth::user()->name}}</h5>
                             <input class="input-message h-100 py-3 fs-5 w-100" type="text" name="content" id="content" placeholder="Write what do you think...">
@@ -230,12 +223,12 @@
             @endauth
 
             @guest
-                <form action="/create_message/{{$publicationsDetails->id_reference_publication}}" method="post" >
+                <form action="/create_message/{{$publicationsDetails->id_reference_publication}}" method="post" style="width:90%;">
                     <div class="d-flex w-100 align-items-center">     
                         <div class="cont-imgProfile">
                             <img src="/images/DefaultFoto.jpg" alt="">
                         </div>
-                        <div class="message ms-3" style="width:72%;">
+                        <div class="message-PC d-flex flex-column ms-3" style="width:72%;">
                             <input class="invisible d-none" type="text" name="username" id="username" placeholder="Username" value="Anonymus">
                             <h5 class="fs-4">Anonymus</h5>
                             <input class="input-message h-100 py-3 fs-5 w-100" type="text" name="content" id="content" placeholder="Write what do you think...">
@@ -252,7 +245,7 @@
             @endguest
         </div>
 
-        <div class="background  py-1 w-50 rounded-5 pe-3 mb-5">
+        <div class="background-PC py-1 w-50 rounded-5 pe-3 mb-5">
             <div  class="w-100 mb-3 fs-5 overflow-y-auto" style="height:25rem;">
                 <h2 class="text-center">Tus comentarios aqui</h2>
                 <hr class="w-75 m-auto">
@@ -268,7 +261,7 @@
                                         <img src="/DB_Img/post/{{$totalUser->foto}}" alt="">
                                     </div>
                                     <div class="ms-2 w-100">
-                                        <div class="bg-message rounded-3 pt-2" style="width:95%;">
+                                        <div class="bg-message-PC rounded-3 pt-2" style="width:95%;">
                                             <h5 class="ms-2 mb-0 fw-bold">{{$message->username}}</h5>
                                             <input class="bg-message border-none ps-2 fs-6 w-100" disabled type="text" value="{{$message->content}}"><br>
                                         </div>
