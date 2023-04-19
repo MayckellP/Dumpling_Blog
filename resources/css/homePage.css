@@ -1,0 +1,353 @@
+.cont-home {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+.cont-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.events-group {
+    width: 14rem;
+    margin: auto;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 3rem;
+}
+
+.switch input {
+    display: none;
+}
+
+.general_events,
+.foods,
+.clubs,
+.blogs {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        inset -4px -4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+    border-radius: 34px;
+    z-index: 2;
+}
+.general_events {
+    background-color: #0497c9;
+}
+.foods {
+    background-color: #a5ffd6;
+}
+.clubs {
+    background-color: #dbb1bc;
+}
+.blogs {
+    background-color: #d3c4e3;
+}
+
+.general_events:before,
+.foods:before,
+.clubs:before,
+.blogs:before {
+    position: absolute;
+    content: "";
+    height: 3rem;
+    width: 3rem;
+    left: 0;
+    bottom: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+.general_events:before {
+    background: url("/public/images/bxs-party.svg") white center no-repeat;
+}
+.foods:before {
+    background: url("/public/images/bx-restaurant.svg") white center no-repeat;
+}
+.clubs:before {
+    background: url("/public/images/bxs-drink.svg") white center no-repeat;
+}
+.blogs:before {
+    background: url("/public/images/bxs-news.svg") white center no-repeat;
+}
+
+input:focus + .general_events,
+input:focus + .foods,
+input:focus + .clubs,
+input:focus + .blogs {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .general_events:before,
+input:checked + .foods:before,
+input:checked + .clubs:before,
+input:checked + .blogs:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(11.5rem);
+}
+
+/*------ ADDED CSS ---------*/
+.general_events:after,
+.foods:after,
+.clubs:after,
+.blogs:after {
+    color: black;
+    display: block;
+    position: absolute;
+    transform: translate(0%, -50%);
+    top: 50%;
+    left: 28%;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Verdana, sans-serif;
+    z-index: 1;
+}
+.general_events:after {
+    content: "General Events";
+}
+.foods:after {
+    content: "Food & Drink";
+}
+.clubs:after {
+    content: "Clubs";
+}
+.blogs:after {
+    content: "Blogs";
+}
+input:checked + .general_events:after,
+input:checked + .foods:after,
+input:checked + .clubs:after,
+input:checked + .blogs:after {
+    color: #3400a1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+input:checked + .general_events:after {
+    content: "You Know!";
+}
+input:checked + .foods:after {
+    content: "Bon Apetit!";
+}
+input:checked + .clubs:after {
+    content: "Enjoy!";
+}
+input:checked + .blogs:after {
+    content: "Let's go!";
+}
+
+/*--------- END --------*/
+
+.cont-home video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-height: 90%;
+    min-width: 100%;
+    z-index: 1;
+}
+.logo-back {
+    z-index: 2;
+    margin-bottom: 10rem;
+    margin-top: 5rem;
+    width: 50%;
+}
+.events-group-desktop {
+    display: none;
+}
+@media (min-width: 800px) {
+    .cont-sections {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    .back-calendar {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+@media (min-width: 1000px) {
+    .logo-back {
+        width: 45%;
+        margin-bottom: 5rem;
+    }
+    .cont-calendarFilter {
+        display: none;
+    }
+    .events-group {
+        display: none;
+    }
+    .events-group-desktop {
+        display: block;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        width: 90%;
+        z-index: 2;
+    }
+    .g_event {
+        height: 42vh;
+        width: 22%;
+        margin: auto;
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/public/images/g_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    .shadow {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 50%;
+        border-radius: 20px;
+    }
+    .card-body {
+        text-align: center;
+        padding: 3rem 1rem;
+        height: 100%;
+    }
+    .card-body {
+        color: white;
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    .food_event {
+        height: 42vh;
+        width: 22%;
+        margin: auto;
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/public/images/food_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .club_event {
+        height: 42vh;
+        width: 22%;
+        margin: auto;
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/public/images/club_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .blog_event {
+        height: 42vh;
+        width: 22%;
+        margin: auto;
+        padding: 0;
+        margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url("/public/images/blog_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    /* EVENTS : HOVER */
+    .g_event:hover {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+            url("/public/images/g_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        color: black;
+    }
+    .food_event:hover {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+            url("/public/images/food_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        color: black;
+    }
+    .club_event:hover {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+            url("/public/images/club_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        color: black;
+    }
+    .blog_event:hover {
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+            url("/public/images/blog_event.png") center no-repeat;
+        background-size: 100%;
+        border-radius: 20px;
+        color: black;
+    }
+    .card-body:hover {
+        color: black;
+    }
+}
+@media (min-width: 1200px) {
+    .logo-back {
+        width: 45%;
+    }
+    .events-group-desktop {
+        width: 80%;
+    }
+    .g_event,
+    .food_event,
+    .club_event,
+    .blog_event {
+        height: 45vh;
+    }
+}
+@media (min-width: 1500px) {
+    .logo-back {
+        width: 30%;
+    }
+    .events-group-desktop {
+        width: 85%;
+        margin-bottom: 2rem;
+    }
+    .g_event,
+    .food_event,
+    .club_event,
+    .blog_event {
+        height: 57vh;
+        width: 20%;
+    }
+}
+@media (min-width: 1900px) {
+    .logo-back {
+        width: 20%;
+    }
+    .events-group-desktop {
+        width: 65%;
+        margin-bottom: 1rem;
+    }
+    .g_event,
+    .food_event,
+    .club_event,
+    .blog_event {
+        height: 60vh;
+        width: 20%;
+    }
+    .card-body {
+        font-size: 50px;
+    }
+}
