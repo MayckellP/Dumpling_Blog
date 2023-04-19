@@ -2,7 +2,80 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  
+  <style>
+   .fixed-con {
+    z-index: 9724790009779558!important;
+    background-color: #f7f8fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+  .VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
+   z-index: 9724790009779!important;
+   top:0;
+   left:unset;
+   right:-5px;
+   display:none!important;
+   border-radius:50%;
+   border:2px solid gold;
+  }
+  .VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+    width:80px;
+    height:80px;
+  }
+  /*hide google translate link | logo | banner-frame */
+  .goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
+    display: none!important;
+  }
+  .goog-te-gadget {
+    color: transparent!important;
+    font-size:0px;
+  }
+
+  .goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+  }
+   
+ /*google translate Dropdown */
+ 
+ #google_translate_element select{
+ background:#f6edfd;
+ color:#383ffa;
+ border: none;
+ border-radius:3px;
+ padding:6px 8px
+ }
+ .goog-logo-link{
+    display:none !important;
+   }
+ .goog-te-gadget{
+  color:transparent!important;
+  }  
+  .goog-te-banner-frame{
+ display:none !important;
+ }
+ #google_translate_element select{
+   background-color:#f6edfd;
+   color:#383ffa;
+   border: none;
+   border-radius:3px;
+   padding:6px 8px
+ }
+ #goog-gt-tt, .goog-te-balloon-frame
+{
+display: none !important;
+}
+.goog-text-highlight 
+{ 
+background: none !important;
+box-shadow: none !important;
+}
+
+  </style>
  
         <div id="google_translate_element"></div>
 
@@ -24,7 +97,25 @@
                }
            </script>
 
+<script>
 
+ function googleTranslateElementInit() {
+
+ new google.translate.TranslateElement({
+
+ pageLanguage: 'en',
+
+ autoDisplay: 'true',
+
+ includedLanguages:'fr,en,es,de,uk,it', 
+
+ layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+
+ }, 'google_translate_element');
+
+ }
+
+ </script>
 
     <!-- </head>
 <style>

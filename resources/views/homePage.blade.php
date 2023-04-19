@@ -73,7 +73,7 @@
             <img src="/images/signWithLogo.svg" alt="">
         </div>
         <section class="events">
-        @include('lang')
+            @include('lang')
             <div class="row">
                 <div class="card col-sm-3 mb-3 mb-sm-0">
                     <a href="/General_Events" class="h-100 text-decoration-none">
