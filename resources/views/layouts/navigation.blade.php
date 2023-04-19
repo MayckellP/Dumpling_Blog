@@ -8,6 +8,12 @@
   .navbar{
     box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
   }
+  .lang{
+    margin-right:40px;
+  }
+    
+
+  
 </style>
 <nav class="navbar navbar-dark bg-black py-3 opacity-75">
   <div class="container-fluid">
@@ -16,6 +22,7 @@
           <img class="logo" src="/images/justDumplingLogo.svg" alt="">
         </a>
     </div>
+    <div class="lang">@include('lang')</div>
     <div class="cont-links w-75 d-flex justify-content-end align-items-center">
         <a href="/homePage" class="text-decoration-none me-5 text-white fs-4">
             Home
@@ -114,4 +121,5 @@
       </div>
     </div>
   </div>
+  
 </nav>
