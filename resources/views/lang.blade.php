@@ -3,6 +3,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <style>
+    .goog-te-gadget-simple{
+    background-color:transparent;
+    border:2px solid #eee;
+    border-radius:5px;
+    padding:5px 10px;
+    box-shadow:0 2px 10px -7pxrgba(0,0,0,0.2);
+    font-size:0px;
+}
+.goog-te-gadget-simple:before{
+      content:'Translator';
+      font-size:12px;
+}
+    #goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+.goog-text-highlight { background: none !important; box-shadow: none !important;}
+    .goog-tooltip {
+display: none !important;
+}
+.goog-tooltip:hover {
+display: none !important;
+}
+.goog-text-highlight {
+background-color: transparent !important;
+border: none !important;
+box-shadow: none !important;
+}
    .fixed-con {
     z-index: 9724790009779558!important;
     background-color: #f7f8fc;
