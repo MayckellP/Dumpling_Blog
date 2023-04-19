@@ -28,11 +28,12 @@
             <!-- Page Content -->
             <main>
             
-             @include('components.lang') 
+              
                 {{ $slot }}
                 
             </main>
         </div>
+        @include('lang')
         <script src="/js/app.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     </body>

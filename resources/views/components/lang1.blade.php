@@ -61,35 +61,30 @@
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 </style> 
-         
-          <div class="btn-translate dropend d-flex justify-content-start  text-white m-3">
+      
+      
+      <div class="btn-translate dropend d-flex justify-content-start  text-white m-3">
               <button type="button" class="btn-translate text-end"data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/images/translate.svg">
               </button>
               <ul class="dropdown-menu ps-3">
-                <li >German</li>
+                <li >German</li><x-flag-country-de class="w-6 h-6" />
                 <li><hr class="dropdown-divider"></li>
-                <li>English</li>
+                <li>English</li><x-flag-country-us class="w-6 h-6"/>
                 <li><hr class="dropdown-divider"></li>
-                <li>Spanish</li>
+                <li>Spanish</li><x-flag-country-es class="w-6 h-6"/>
                 <li><hr class="dropdown-divider"></li>
-                <li>French</li>
+                <li>French</li><x-flag-country-fr class="w-6 h-6"/>
                 <li><hr class="dropdown-divider"></li>
-                <li>Ukranian</li>
-                <li><hr class="dropdown-divider"></li>
+                <li>Ukranian</li><x-flag-country-fr class="w-6 h-6"/>
               </ul>
           </div>
- 
-         
+ <div>
+  
+ </div>
+
+           
+
 </body>
-<script type="text/javascript">
-    
-    var url = "{{ route('changeLang') }}";
-    
-    $(".changeLang").change(function(){
-        window.location.href = url + "?lang="+ $(this).val();
-    });
-    
-</script>
-</html> 
+
 

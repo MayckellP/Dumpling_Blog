@@ -1,13 +1,32 @@
 
-<x-app-layout>
-<head>
-    <title>How to Create Multi Language Website in Laravel </title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+
+  
+ 
+        <div id="google_translate_element"></div>
+
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          
+          <script type="text/javascript">
+               function googleTranslateElementInit() {
+               new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+               
+               var $googleDiv = $("#google_translate_element .skiptranslate");
+               var $googleDivChild = $("#google_translate_element .skiptranslate div");
+               $googleDivChild.next().remove();
+               
+               $googleDiv.contents().filter(function(){
+               return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+               }).remove();
+               
+               }
+           </script>
+
+
+
+    <!-- </head>
 <style>
     .changeLang1 {
         margin:10px;
@@ -36,24 +55,7 @@
 </style> 
 <body>
 
-        <!-- <div class="card">
-            <<div class="row">
-                <div class="col-md-2">
-                   <select class=" changeLang" id="translate">
-                      <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                      <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' :''}}>France</option>
-                      <option value="es" {{ session()->get('locale') == 'es' ? 'selected' :''}}>Spanish</option>
-                      <option value="it" {{ session()->get('locale') == 'it' ? 'selected' :''}}>Italiano</option>
-                      <option value="uk" {{ session()->get('locale') == 'uk' ? 'selected' :''}}>Ukranian</option>
-                      <option value="de" {{ session()->get('locale') == 'de' ? 'selected' :''}}>Deutsh</option>
-                    </select>
-                </div>
-                 <h3>{{ GoogleTranslate::trans('Google translate in different language ', app()->getLocale())  }}</h3>
-            </div>
-        </div>
-   -->     
 
-    
 <div class="changeLang1">
 <form action="" >
       
@@ -66,6 +68,22 @@
       <option value="uk" {{ session()->get('locale') == 'uk' ? 'selected' :''}}>Ukranian</option>
       <option value="de" {{ session()->get('locale') == 'de' ? 'selected' :''}}>Deutsh</option>
     </select>
+
+    <div class="container">
+  
+        <div class="card">
+          <div class="card-header">
+            <h1>Laravel Google Translate Example - ItSolutionStuff.com</h1>
+          </div>
+          <div class="card-body">
+                
+              
+                <h3>{{ GoogleTranslate::trans('Welcome to ItSolutionStuff.com', app()->getLocale()) }}</h3>
+                <h3>{{ GoogleTranslate::trans('Hello World', app()->getLocale()) }}</h3>
+          </div>
+        </div>
+      
+    </div>
     
 </form>
 </div>
@@ -82,8 +100,7 @@
         window.location.href = url + "?lang="+ $(this).val();
     }); 
   
-</script> 
-</x-app-layout>
-</body>
-</html>	
+</script>  -->
+
+
 

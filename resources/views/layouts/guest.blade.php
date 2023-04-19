@@ -28,10 +28,11 @@
 
             <!-- Page Content -->
             <main class="w-50 m-auto mt-5">
-            
+            @include('lang')
                 {{ $slot }}
             </main>
         </div>
+        
         <script src="/js/app.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     </body>
