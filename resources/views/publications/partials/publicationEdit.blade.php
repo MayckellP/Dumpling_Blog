@@ -186,9 +186,7 @@
                                 @if($publications->Id_Reference_User == Auth::user()->id)
                                     <div class="d-grid gap-2 d-md-block w-100 text-end">
                                             <button class="btn btn-danger me-5 w-25" type="button">Cancel</button>
-                                        <a href="/edit/{{$publicationsDetails->id}}">
-                                            <button class="btn btn-success w-25" type="type">Save Changes</button>
-                                        </a>
+                                            <button class="buttonSave w-25" type="submit">Save Changes</button>
                                     </div>
                                 @endif
                             @endauth

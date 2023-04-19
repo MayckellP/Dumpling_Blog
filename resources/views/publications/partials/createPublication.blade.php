@@ -135,7 +135,8 @@
               <div class="cont-buttons d-flex justify-content-around">
                 <button type="submit" class="btn btn-success mb-3 m-auto w-50 fw-bold">Create Event</button>  
                   <button type="button" class="btn btn-danger mb-3 m-auto w-25 fw-bold" onclick="return backPage()">Cancel</button> 
-              </div>              
+              </div>     
+              @csrf          
             </form>
           </div>            
         </div>
