@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="form-floating mb-2">
-          <textarea class="form-control" id="content" placeholder="Content here" name="content"></textarea>
+          <textarea cols="50" rows="20" class="form-control" id="content" placeholder="Content here" name="content"></textarea>
           <label for="content">Content</label>
         </div>
         <div id="blogNone">

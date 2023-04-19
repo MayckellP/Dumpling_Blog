@@ -164,6 +164,7 @@ input:checked + .blogs:after {
 .logo-back {
     z-index: 2;
     margin-bottom: 10rem;
+    margin-top: 5rem;
     width: 50%;
 }
 .events-group-desktop {

@@ -90,7 +90,7 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
     });
 });
 
-document.querySelector("#btn-month-mobile").onclick = () => {
+document.querySelector("#btn-month").onclick = () => {
     eventDate = document.getElementById("month");
     try {
         eventDate.showPicker();
