@@ -5,5 +5,5 @@
             <p class="fs-1" id="text-date"></p>
     	</button>   
     </div>
-    <input type="date" id="monthPC" name="dateFilter" onchange="getObject(this);" hidden />
+    <input type="date" id="monthPC" name="dateFilter" onchange="getObjectt(this);" hidden />
 </div>
