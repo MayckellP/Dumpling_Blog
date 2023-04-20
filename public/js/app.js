@@ -90,16 +90,16 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
     });
 });
 
-document.querySelector("#btn-month").onclick = () => {
+document.getElementById("btn-month").onclick = () => {
     eventDate = document.getElementById("month");
     try {
-        eventDate.showPicker();
+        eventDates.showPicker();
     } catch (error) {
         window.alert(error);
     }
 };
-function getObjects(eventDate) {
-    console.log(eventDate.value);
+function getObjects(eventDates) {
+    console.log(eventDates.value);
 }
 
 var dateInput = document.getElementById("monthPC");
@@ -133,7 +133,7 @@ document.querySelector("#btn-month").onclick = () => {
     }
 };
 
-function getObject(eventDate) {
+function getObjectt(eventDate) {
     console.log(eventDate.value);
     textDate.innerHTML = dateInput.value;
 }

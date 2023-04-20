@@ -9,3 +9,6 @@
       @include('components.translateButton')
     </div>
 </div>
+<div class="m-auto w-50">
+  @include('components.newTranslate')
+</div>
